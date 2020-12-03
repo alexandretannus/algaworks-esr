@@ -14,3 +14,6 @@ Criação de um controller básico
 
 ### Aula 2.8 - Restart mais rápido da aplicação com DevTools
 Adição da dependência DevTools para reinicialização rápida durante o desenvolvimento da aplicação
+
+### Aula 2.11 - Definindo beans com @Component
+Utilização da anotação @Component para definir beans gerenciados pelo Spring
