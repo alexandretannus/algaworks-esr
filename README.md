@@ -16,4 +16,8 @@ Criação de um controller básico
 Adição da dependência DevTools para reinicialização rápida durante o desenvolvimento da aplicação
 
 ### Aula 2.11 - Definindo beans com @Component
-Utilização da anotação @Component para definir beans gerenciados pelo Spring
+Utilização da anotação @Component para definir beans gerenciados pelo Spring. Exemplo com um simulador de notificação de emails para clientes
+
+### Aula 2.12 - Injetando dependências (beans Spring)
+Injeção de dependências através de construtor
+Criação da interface Notificador (padrão de projeto Factory)
