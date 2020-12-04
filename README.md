@@ -24,3 +24,6 @@ Criação da interface Notificador (padrão de projeto Factory)
 
 ### Aula 2.13 - Usando @Configuration e @Bean para definir beans
 Criação de classes de configuração e beans
+
+### Aula 2.14 - Conhecendo os pontos de injeção e a anotação @Autowired
+Injeçao de dependências por construtor, *setter* e anotação @Autowired 
