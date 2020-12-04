@@ -21,3 +21,6 @@ Utilização da anotação @Component para definir beans gerenciados pelo Spring
 ### Aula 2.12 - Injetando dependências (beans Spring)
 Injeção de dependências através de construtor
 Criação da interface Notificador (padrão de projeto Factory)
+
+### Aula 2.13 - Usando @Configuration e @Bean para definir beans
+Criação de classes de configuração e beans
