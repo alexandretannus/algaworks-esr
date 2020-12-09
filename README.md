@@ -36,3 +36,6 @@ Desambiguação de beans utilizando listas.  Todos os beans são utilizados
 
 ### Aula 2.17 - Desambiguação de beans com @Primary
 Utilização da anotação @Primary para definir prioridade de beans
+
+### Aula 2.18 - Desambiguação de beans com @Qualifier
+Utilização da anotação @Qualifier para definir prioridade de beans
