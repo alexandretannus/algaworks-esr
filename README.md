@@ -33,3 +33,6 @@ Configuração de dependência opcional com o parâmetro required na anotação 
 
 ### Aula 2.16 - Ambiguidade de beans e injeção de lista de beans
 Desambiguação de beans utilizando listas.  Todos os beans são utilizados
+
+### Aula 2.17 - Desambiguação de beans com @Primary
+Utilização da anotação @Primary para definir prioridade de beans

@@ -12,14 +12,12 @@ import org.springframework.stereotype.Component;
 public class AtivacaoClienteService {
 
     @Autowired(required = false)
-    private List<Notificador> notificadores;
+    private Notificador notificador;
 
     public void ativar(Cliente cliente) {
         cliente.ativar();
 
-        for (Notificador notificador : notificadores) {
-            notificador.notificar(cliente, "Seu cadastro está ativo");
-        }
+        notificador.notificar(cliente, "Seu cadastro está ativo");
 
     }
 
