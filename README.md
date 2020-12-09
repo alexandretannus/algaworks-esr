@@ -39,3 +39,6 @@ Utilização da anotação @Primary para definir prioridade de beans
 
 ### Aula 2.18 - Desambiguação de beans com @Qualifier
 Utilização da anotação @Qualifier para definir prioridade de beans
+
+### Aula 2.19 - Desambiguação de beans com anotação customizada
+@Qualifier é resolvido em tempo de execução.  Criação de anotação para definir prioridade do bean. 
