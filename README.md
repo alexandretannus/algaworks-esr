@@ -30,3 +30,6 @@ Injeçao de dependências por construtor, *setter* e anotação @Autowired
 
 ### Aula 2.15 - Dependência opcional com @Autowired
 Configuração de dependência opcional com o parâmetro required na anotação @Autowired
+
+### Aula 2.16 - Ambiguidade de beans e injeção de lista de beans
+Desambiguação de beans utilizando listas.  Todos os beans são utilizados
