@@ -42,3 +42,6 @@ Utilização da anotação @Qualifier para definir prioridade de beans
 
 ### Aula 2.19 - Desambiguação de beans com anotação customizada
 @Qualifier é resolvido em tempo de execução.  Criação de anotação para definir prioridade do bean. 
+
+### Aula 2.20 - Mudando o comportamento da aplicação com Spring Profiles
+Criação de profiles com arquivos *.properties. Utilização da anotação @Profile
