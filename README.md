@@ -45,3 +45,8 @@ Utilização da anotação @Qualifier para definir prioridade de beans
 
 ### Aula 2.20 - Mudando o comportamento da aplicação com Spring Profiles
 Criação de profiles com arquivos *.properties. Utilização da anotação @Profile
+
+### Aula 2.21 - Criando métodos de callback do ciclo de vida dos beans
+Configuração de callbacks de inicialização e finalização do bean com
+- Anotações @PostConstruct e @PreDestroy
+- Classe de configuração com propriedades init e destroy na anotação @Bean
