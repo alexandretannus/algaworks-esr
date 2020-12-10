@@ -53,3 +53,7 @@ Configuração de callbacks de inicialização e finalização do bean com
 
 ### Aula 2.22 - Publicando e consumindo eventos customizados
 Implementação do padrão de projeto Observer para notificações
+
+### Aula 2.23 - Configurando projetos Spring Boot com o application.properties
+Configuração do application.properties
+Link da documentação do Spring: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
