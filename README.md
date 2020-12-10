@@ -50,3 +50,6 @@ Criação de profiles com arquivos *.properties. Utilização da anotação @Pro
 Configuração de callbacks de inicialização e finalização do bean com
 - Anotações @PostConstruct e @PreDestroy
 - Classe de configuração com propriedades init e destroy na anotação @Bean
+
+### Aula 2.22 - Publicando e consumindo eventos customizados
+Implementação do padrão de projeto Observer para notificações
