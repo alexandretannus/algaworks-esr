@@ -57,3 +57,6 @@ Implementação do padrão de projeto Observer para notificações
 ### Aula 2.23 - Configurando projetos Spring Boot com o application.properties
 Configuração do application.properties
 Link da documentação do Spring: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
+
+### Aula 2.25 - Criando e acessando propriedades customizadas com @Value
+Criação e utilização de propriedades no arquivo application.properties e utilização em NotificadorEmail com anotação @Value
