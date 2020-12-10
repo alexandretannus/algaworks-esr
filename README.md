@@ -60,3 +60,6 @@ Link da documentação do Spring: https://docs.spring.io/spring-boot/docs/curren
 
 ### Aula 2.25 - Criando e acessando propriedades customizadas com @Value
 Criação e utilização de propriedades no arquivo application.properties e utilização em NotificadorEmail com anotação @Value
+
+### Aula 2.26 - Acessando propriedades com @ConfigurationProperties
+Configuração da classe NotificadorProperties e utilização de propriedades com anotação @ConfigurationProperties
