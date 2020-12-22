@@ -63,3 +63,10 @@ Criação e utilização de propriedades no arquivo application.properties e uti
 
 ### Aula 2.26 - Acessando propriedades com @ConfigurationProperties
 Configuração da classe NotificadorProperties e utilização de propriedades com anotação @ConfigurationProperties
+
+### Módulo 3
+## Aula 3.3 - Adicionando JPA e configurando o Data Source
+Configuração inicial do Spring Data JPA e das propriedades do banco de dados
+
+## 3.4 - Mapeando entidades com JPA
+Mapeamento das entidades Restaurante e Cozinha.  Anotações @Entity, @Table, @Id e @Column.
