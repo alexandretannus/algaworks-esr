@@ -76,3 +76,6 @@ Geração automática de tabelas utilizando as entidades e as configurações sp
 
 ## Aula 3.6 - Mapeando o id da entidade para autoincremento
 Configuração do autoincrmento do id através da anotação @GenerationType
+
+## Aula 3.7 - Importando dados de teste com import.sql
+Criação de script para popular a tabela cozinha no banco de dados.  Arquivo com nome *import.sql* (obrigatório ser esse nome)
