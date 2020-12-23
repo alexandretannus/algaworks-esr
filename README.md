@@ -140,4 +140,7 @@ Mapeamento de entidades e criação dos repositórios
 - Permissao
 - FormaPagamento
 
+## Módulo 4
 
+### Aula 4.10 - Modelando e requisitando um Collection Resource com GET
+Criação do controlador para obtenção de lista de cozinhas
