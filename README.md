@@ -130,4 +130,8 @@ Configuração do dialeto padrão do banco de dados com spring.jpa.hibernate.dia
 ### Aula 3.18 - A anotação @JoinColumn
 Definição de nome para a coluna de relacionamento com @JoinColumn com o parâmetro name
 
+### Aula 3.19 - Propriedade nullable de @Column e @JoinColumn
+Configuração de propriedade não nula nas colunas (válido apenas para geração automática de tabelas)
+
+
 
