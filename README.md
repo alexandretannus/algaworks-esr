@@ -111,3 +111,9 @@ Implementação de interface CozinhaRepository e da classe de implementação Co
 Cópia dos métodos de CadastroCozinha para CozinhaRepositoryImpl.  
 Exclusão da classe CadastroCozinha.  
 Refatoração das classes de manipulação de dados criadas nas aulas 3.9 a 3.12.
+
+### Aula 3.15 - Conhecendo e usando o Lombok
+Configuração da dependência do Lombok.  
+Anotações @Getter, @Setter, @EqualsAndHashCode e @Data.  
+Propriedade onlyExplicityIncluded em @EqualsAndHashCode. 
+Utilização na classe Cozinha.   
