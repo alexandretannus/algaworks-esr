@@ -144,3 +144,7 @@ Mapeamento de entidades e criação dos repositórios
 
 ### Aula 4.10 - Modelando e requisitando um Collection Resource com GET
 Criação do controlador para obtenção de lista de cozinhas
+
+### Aula 4.11 - Desafio: collection resource de estados
+Criação do controlador para obtenção de lista de estados
+
