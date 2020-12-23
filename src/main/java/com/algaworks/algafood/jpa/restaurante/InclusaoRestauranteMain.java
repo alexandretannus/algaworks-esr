@@ -1,5 +1,7 @@
 package com.algaworks.algafood.jpa.restaurante;
 
+import java.math.BigDecimal;
+
 import com.algaworks.algafood.AlgafoodApiApplication;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
@@ -18,11 +20,11 @@ public class InclusaoRestauranteMain {
 
         Restaurante restaurante1 = new Restaurante();
         restaurante1.setNome("Comida Tailandesa");
-        restaurante1.setTaxaFrete(12.0);
+        restaurante1.setTaxaFrete(new BigDecimal(12.0));
 
         Restaurante restaurante2 = new Restaurante();
         restaurante2.setNome("Indiano");
-        restaurante2.setTaxaFrete(0.0);
+        restaurante2.setTaxaFrete(BigDecimal.ZERO);
 
         restauranteRepository.salvar(restaurante1);
         restauranteRepository.salvar(restaurante2);

@@ -1,5 +1,7 @@
 package com.algaworks.algafood.jpa.restaurante;
 
+import java.math.BigDecimal;
+
 import com.algaworks.algafood.AlgafoodApiApplication;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
@@ -19,7 +21,7 @@ public class AlteracaoRestauranteMain {
         Restaurante restaurante = new Restaurante();
         restaurante.setId(1L);
         restaurante.setNome("Thai Gourmet");
-        restaurante.setTaxaFrete(7.5);
+        restaurante.setTaxaFrete(new BigDecimal(7.5));
 
         RestauranteRepository.salvar(restaurante);
     }
