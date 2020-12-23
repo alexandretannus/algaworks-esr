@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.algaworks</groupId>
-	<artifactId>algafoof-api</artifactId>
+	<artifactId>algafood-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>algafood</name>
 	<description>API de delivery de comida</description>
@@ -50,7 +50,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>annotationProcessor</scope>
 		</dependency>
 	</dependencies>
 

@@ -1,4 +1,4 @@
-package com.algaworks.algafood.jpa;
+package com.algaworks.algafood.jpa.cozinha;
 
 import com.algaworks.algafood.AlgafoodApiApplication;
 import com.algaworks.algafood.domain.model.Cozinha;

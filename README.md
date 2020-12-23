@@ -117,3 +117,8 @@ Configuração da dependência do Lombok.
 Anotações @Getter, @Setter, @EqualsAndHashCode e @Data.  
 Propriedade onlyExplicityIncluded em @EqualsAndHashCode. 
 Utilização na classe Cozinha.   
+
+### Aula 3.16 - Desafio: Lombok e repositório de restaurantes
+Utilização do Lombok na classe Restaurante.  
+Criação do repositório de restaurantes.  
+Inserção de SQL para restaurantes. 
