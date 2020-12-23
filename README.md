@@ -153,3 +153,7 @@ Definição de formato de dados para utilização nos endpoints (JSON ou XML).
 O formato pode ser definido em escopo de classe (na anotação RequestMapping) ou em escopo do método (na anotação GetMapping, por exemplo).  
 A anotação de método tem prioridade sobre a anotação de classe.  
 O mesmo mapeamento pode produzir diferentes formatos.  
+
+### Aula 4.14 - Consultando Singleton Resource com GET e @PathVariable
+Mapeamento para recurso único.  
+Utilização da anotação @PathVariable
