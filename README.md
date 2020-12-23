@@ -91,3 +91,6 @@ Busca de cozinha por Id.  Sem tratamento para Id inexistente.
 
 ### Aula 3.11 - Atualizando um objeto no banco de dados
 Atualização de dados no banco.  Refatoração: Mudança do nome do método adicionar para salvar.  
+
+### Aula 3.12 - Excluindo um objeto do banco de dados
+Exclusão de dados do banco.  Necessário obter instância gerenciável do objeto.  Artigo sobre JPA e estados da instância: https://blog.algaworks.com/tutorial-jpa/
