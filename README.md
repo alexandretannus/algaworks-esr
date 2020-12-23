@@ -83,5 +83,8 @@ Criação de script para popular a tabela cozinha no banco de dados.  Arquivo co
 ## Aula 3.8 - Consultando objetos do banco de dados
 Listagem de objetos da classe Cozinha.  Uso da classe EntityManager com a anotação @PersistenceContext. Ver SQL gerado com spring.jpa.show-sql
 
-## 3.9. Adicionando um objeto no banco de dados
+## Aula 3.9 - Adicionando um objeto no banco de dados
 Inserção de dados no banco.  Método merge.  Necessário anotar o método adicionar com @Transactional 
+
+## Aula 3.10 - Buscando um objeto pelo id no banco de dados
+Busca de cozinha por Id.  Sem tratamento para Id inexistente.
