@@ -16,7 +16,8 @@ Criação de um controller básico
 Adição da dependência DevTools para reinicialização rápida durante o desenvolvimento da aplicação
 
 ### Aula 2.11 - Definindo beans com @Component
-Utilização da anotação @Component para definir beans gerenciados pelo Spring.  Exemplo com um simulador de notificação de emails para clientes
+Utilização da anotação @Component para definir beans gerenciados pelo Spring.  
+Exemplo com um simulador de notificação de emails para clientes
 
 ### Aula 2.12 - Injetando dependências (beans Spring)
 Injeção de dependências através de construtor
@@ -41,7 +42,8 @@ Utilização da anotação @Primary para definir prioridade de beans
 Utilização da anotação @Qualifier para definir prioridade de beans
 
 ### Aula 2.19 - Desambiguação de beans com anotação customizada
-@Qualifier é resolvido em tempo de execução.  Criação de anotação para definir prioridade do bean. 
+@Qualifier é resolvido em tempo de execução.  
+Criação de anotação para definir prioridade do bean. 
 
 ### Aula 2.20 - Mudando o comportamento da aplicação com Spring Profiles
 Criação de profiles com arquivos *.properties. Utilização da anotação @Profile
@@ -55,7 +57,7 @@ Configuração de callbacks de inicialização e finalização do bean com
 Implementação do padrão de projeto Observer para notificações
 
 ### Aula 2.23 - Configurando projetos Spring Boot com o application.properties
-Configuração do application.properties
+Configuração do application.properties.  
 Link da documentação do Spring: https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html
 
 ### Aula 2.25 - Criando e acessando propriedades customizadas com @Value
@@ -78,19 +80,28 @@ Geração automática de tabelas utilizando as entidades e as configurações sp
 Configuração do autoincrmento do id através da anotação @GenerationType
 
 ### Aula 3.7 - Importando dados de teste com import.sql
-Criação de script para popular a tabela cozinha no banco de dados.  Arquivo com nome *import.sql* (obrigatório ser esse nome)
+Criação de script para popular a tabela cozinha no banco de dados.  
+Arquivo com nome *import.sql* (obrigatório ser esse nome)
 
 ### Aula 3.8 - Consultando objetos do banco de dados
-Listagem de objetos da classe Cozinha.  Uso da classe EntityManager com a anotação @PersistenceContext. Ver SQL gerado com spring.jpa.show-sql
+Listagem de objetos da classe Cozinha.  
+Uso da classe EntityManager com a anotação @PersistenceContext. 
+Ver SQL gerado com spring.jpa.show-sql
 
 ### Aula 3.9 - Adicionando um objeto no banco de dados
-Inserção de dados no banco.  Método merge.  Necessário anotar o método adicionar com @Transactional 
+Inserção de dados no banco.  
+Método merge.  
+Necessário anotar o método adicionar com @Transactional 
 
 ### Aula 3.10 - Buscando um objeto pelo id no banco de dados
-Busca de cozinha por Id.  Sem tratamento para Id inexistente.
+Busca de cozinha por Id.  
+Sem tratamento para Id inexistente.
 
 ### Aula 3.11 - Atualizando um objeto no banco de dados
-Atualização de dados no banco.  Refatoração: Mudança do nome do método adicionar para salvar.  
+Atualização de dados no banco.  
+Refatoração: Mudança do nome do método adicionar para salvar.  
 
 ### Aula 3.12 - Excluindo um objeto do banco de dados
-Exclusão de dados do banco.  Necessário obter instância gerenciável do objeto.  Artigo sobre JPA e estados da instância: https://blog.algaworks.com/tutorial-jpa/
+Exclusão de dados do banco.  
+Necessário obter instância gerenciável do objeto.  
+Artigo sobre JPA e estados da instância: https://blog.algaworks.com/tutorial-jpa/
