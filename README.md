@@ -79,3 +79,6 @@ Configuração do autoincrmento do id através da anotação @GenerationType
 
 ## Aula 3.7 - Importando dados de teste com import.sql
 Criação de script para popular a tabela cozinha no banco de dados.  Arquivo com nome *import.sql* (obrigatório ser esse nome)
+
+## Aula 3.8 - Consultando objetos do banco de dados
+Listagem de objetos da classe Cozinha.  Uso da classe EntityManager com a anotação @PersistenceContext. Ver SQL gerado com spring.jpa.show-sql
