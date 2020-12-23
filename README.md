@@ -73,3 +73,6 @@ Mapeamento das entidades Restaurante e Cozinha.  Anotações @Entity, @Table, @I
 
 ## Aula 3.5 - Criando as tabelas do banco a partir das entidades
 Geração automática de tabelas utilizando as entidades e as configurações spring.jpa.generate-ddl e spring.jpa.hibernate.ddl-auto
+
+## Aula 3.6 - Mapeando o id da entidade para autoincremento
+Configuração do autoincrmento do id através da anotação @GenerationType
