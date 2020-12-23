@@ -68,5 +68,8 @@ Configuração da classe NotificadorProperties e utilização de propriedades co
 ## Aula 3.3 - Adicionando JPA e configurando o Data Source
 Configuração inicial do Spring Data JPA e das propriedades do banco de dados
 
-## 3.4 - Mapeando entidades com JPA
+## Aula 3.4 - Mapeando entidades com JPA
 Mapeamento das entidades Restaurante e Cozinha.  Anotações @Entity, @Table, @Id e @Column.
+
+## Aula 3.5 - Criando as tabelas do banco a partir das entidades
+Geração automática de tabelas utilizando as entidades e as configurações spring.jpa.generate-ddl e spring.jpa.hibernate.ddl-auto
