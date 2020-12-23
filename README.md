@@ -64,27 +64,30 @@ Criação e utilização de propriedades no arquivo application.properties e uti
 ### Aula 2.26 - Acessando propriedades com @ConfigurationProperties
 Configuração da classe NotificadorProperties e utilização de propriedades com anotação @ConfigurationProperties
 
-### Módulo 3
-## Aula 3.3 - Adicionando JPA e configurando o Data Source
+## Módulo 3
+### Aula 3.3 - Adicionando JPA e configurando o Data Source
 Configuração inicial do Spring Data JPA e das propriedades do banco de dados
 
-## Aula 3.4 - Mapeando entidades com JPA
+### Aula 3.4 - Mapeando entidades com JPA
 Mapeamento das entidades Restaurante e Cozinha.  Anotações @Entity, @Table, @Id e @Column.
 
-## Aula 3.5 - Criando as tabelas do banco a partir das entidades
+### Aula 3.5 - Criando as tabelas do banco a partir das entidades
 Geração automática de tabelas utilizando as entidades e as configurações spring.jpa.generate-ddl e spring.jpa.hibernate.ddl-auto
 
-## Aula 3.6 - Mapeando o id da entidade para autoincremento
+### Aula 3.6 - Mapeando o id da entidade para autoincremento
 Configuração do autoincrmento do id através da anotação @GenerationType
 
-## Aula 3.7 - Importando dados de teste com import.sql
+### Aula 3.7 - Importando dados de teste com import.sql
 Criação de script para popular a tabela cozinha no banco de dados.  Arquivo com nome *import.sql* (obrigatório ser esse nome)
 
-## Aula 3.8 - Consultando objetos do banco de dados
+### Aula 3.8 - Consultando objetos do banco de dados
 Listagem de objetos da classe Cozinha.  Uso da classe EntityManager com a anotação @PersistenceContext. Ver SQL gerado com spring.jpa.show-sql
 
-## Aula 3.9 - Adicionando um objeto no banco de dados
+### Aula 3.9 - Adicionando um objeto no banco de dados
 Inserção de dados no banco.  Método merge.  Necessário anotar o método adicionar com @Transactional 
 
-## Aula 3.10 - Buscando um objeto pelo id no banco de dados
+### Aula 3.10 - Buscando um objeto pelo id no banco de dados
 Busca de cozinha por Id.  Sem tratamento para Id inexistente.
+
+### Aula 3.11 - Atualizando um objeto no banco de dados
+Atualização de dados no banco.  Refatoração: Mudança do nome do método adicionar para salvar.  
