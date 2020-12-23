@@ -125,5 +125,9 @@ Inserção de SQL para restaurantes.
 
 ### Aula 3.17 - Mapeando relacionamento com @ManyToOne
 Configuração de relacionamento muitos pra um na entidade Restaurante.  
-Configuração do dialeto padrão do banco de dados com spring.jpa.hibernate.dialect=MySQL57Dialect
+Configuração do dialeto padrão do banco de dados com spring.jpa.hibernate.dialect (application.properties)
+
+### Aula 3.18 - A anotação @JoinColumn
+Definição de nome para a coluna de relacionamento com @JoinColumn com o parâmetro name
+
 
