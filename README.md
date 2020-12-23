@@ -148,3 +148,8 @@ Criação do controlador para obtenção de lista de cozinhas
 ### Aula 4.11 - Desafio: collection resource de estados
 Criação do controlador para obtenção de lista de estados
 
+### Aula 4.13 - Implementando content negotiation para retornar JSON ou XML
+Definição de formato de dados para utilização nos endpoints (JSON ou XML).  
+O formato pode ser definido em escopo de classe (na anotação RequestMapping) ou em escopo do método (na anotação GetMapping, por exemplo).  
+A anotação de método tem prioridade sobre a anotação de classe.  
+O mesmo mapeamento pode produzir diferentes formatos.  
