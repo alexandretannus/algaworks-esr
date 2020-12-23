@@ -105,3 +105,9 @@ Refatoração: Mudança do nome do método adicionar para salvar.
 Exclusão de dados do banco.  
 Necessário obter instância gerenciável do objeto.  
 Artigo sobre JPA e estados da instância: https://blog.algaworks.com/tutorial-jpa/
+
+### Aula 3.14 - Conhecendo e implementando o padrão Repository
+Implementação de interface CozinhaRepository e da classe de implementação CozinhaRepository.  
+Cópia dos métodos de CadastroCozinha para CozinhaRepositoryImpl.  
+Exclusão da classe CadastroCozinha.  
+Refatoração das classes de manipulação de dados criadas nas aulas 3.9 a 3.12.
