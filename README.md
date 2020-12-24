@@ -206,4 +206,8 @@ Alteração do método de exclusão no repositório para receber o id como parâ
 Lançamento de exceção EmptyResultDataAccess -> EntidadeNaoEncontradaException
 Lançamento de exceção DataIntegrityViolationException -> EntidadeEmUsoException  
 
-
+### Aula 4.29 - Desafio: modelando e implementando a consulta de recursos de restaurantes
+Retirada do suporte a XML
+Implementação do controlador de restaurantes
+- Lista de restaurantes (/restaurantes)
+- Busca de restaurantes (/restaurantes/{id})
