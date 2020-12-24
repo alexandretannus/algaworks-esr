@@ -181,3 +181,7 @@ Configuração do status de retorno utilizando ResponseEntity
 
 ### Aula 4.21. Corrigindo o Status HTTP para resource inexistente
 Lançamento de código 404 para recurso inexistente.
+
+### Aula 4.23 - Modelando e implementando a inclusão de recursos com POST
+Inclusão de cozinha com POST em /cozinhas.  
+Alteração do status de resposta para 201 (Created).
