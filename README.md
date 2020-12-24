@@ -195,3 +195,9 @@ Exclusão de cozinha com DELETE.
 - Em caso de sucesso, status 204 (No Content)  
 - Em caso de falha por não existir o recurso, status 404 (Not Found)  
 - Em caso de falha por violação de integridade de chave estrangeira, status 409 (Conflict)  
+
+### Aula 4.27 - Implementando a camada de domain services (e a importância da linguagem ubíqua)
+Implementação da camada de serviços para Cozinha.  
+Anotação @Service.  
+Utilizar esta camada para implementação de regras de negócio.  
+
