@@ -189,3 +189,9 @@ Alteração do status de resposta para 201 (Created).
 ### Aula 4.25 - Modelando e implementando a atualização de recursos com PUT
 Alteração de cozinha com PUT.  
 Tratamento de erro quando o Id não existe (status 404).
+
+### Aula 4.26 - Modelando e implementando a exclusão de recursos com DELETE
+Exclusão de cozinha com DELETE.  
+- Em caso de sucesso, status 204 (No Content)  
+- Em caso de falha por não existir o recurso, status 404 (Not Found)  
+- Em caso de falha por violação de integridade de chave estrangeira, status 409 (Conflict)  
