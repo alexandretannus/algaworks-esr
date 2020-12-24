@@ -175,3 +175,6 @@ Anotações utilizadas:
 
 ### Aula 4.19. Definindo o status da resposta HTTP com @ResponseStatus
 Alteração do status de resposta da requisição
+
+### Aula 4.20 - Manipulando a resposta HTTP com ResponseEntity
+Configuração do status de retorno utilizando ResponseEntity

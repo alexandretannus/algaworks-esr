@@ -7,12 +7,11 @@ import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.repository.CozinhaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -32,10 +31,12 @@ public class CozinhaController {
         return new CozinhasXmlWrapper(cozinhaRepository.listar());
     }
 
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping("{cozinhaId}")
-    public Cozinha buscar(@PathVariable("cozinhaId") Long id) {
-        return cozinhaRepository.buscar(id);
+    public ResponseEntity<Cozinha> buscar(@PathVariable("cozinhaId") Long id) {
+        Cozinha cozinha = cozinhaRepository.buscar(id);
+
+        // return ResponseEntity.status(HttpStatus.OK).body(cozinha);
+        return ResponseEntity.ok(cozinha);
     }
 
 }
