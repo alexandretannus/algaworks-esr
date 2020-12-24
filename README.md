@@ -185,3 +185,7 @@ Lançamento de código 404 para recurso inexistente.
 ### Aula 4.23 - Modelando e implementando a inclusão de recursos com POST
 Inclusão de cozinha com POST em /cozinhas.  
 Alteração do status de resposta para 201 (Created).
+
+### Aula 4.25 - Modelando e implementando a atualização de recursos com PUT
+Alteração de cozinha com PUT.  
+Tratamento de erro quando o Id não existe (status 404).
