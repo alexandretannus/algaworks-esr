@@ -178,3 +178,6 @@ Alteração do status de resposta da requisição
 
 ### Aula 4.20 - Manipulando a resposta HTTP com ResponseEntity
 Configuração do status de retorno utilizando ResponseEntity
+
+### Aula 4.21. Corrigindo o Status HTTP para resource inexistente
+Lançamento de código 404 para recurso inexistente.
