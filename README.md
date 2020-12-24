@@ -157,3 +157,10 @@ O mesmo mapeamento pode produzir diferentes formatos.
 ### Aula 4.14 - Consultando Singleton Resource com GET e @PathVariable
 Mapeamento para recurso único.  
 Utilização da anotação @PathVariable
+
+### Aula 4.15 - Customizando as representações XML e JSON com @JsonIgnore, @JsonProperty e @JsonRootName
+- @JsonRootName - Mudar nome da representação da classe (XML)
+- @JsonProperty - Pode ser utilizada para alterar a representação do at
+- @JsonIgnore - Ignorar a propriedade na representação
+
+@JsonProperty possui prioridade sobre @JsonIgnore. Caso ambas sejam colocadas no mesmo atributo @JsonProperty funcionará corretamente e @JsonIgnore será desconsiderada.
