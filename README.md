@@ -201,3 +201,9 @@ Implementação da camada de serviços para Cozinha.
 Anotação @Service.  
 Utilizar esta camada para implementação de regras de negócio.  
 
+### Aula 4.28 - Refatorando a exclusão de cozinhas para usar domain services
+Alteração do método de exclusão no repositório para receber o id como parâmetro.
+Lançamento de exceção EmptyResultDataAccess -> EntidadeNaoEncontradaException
+Lançamento de exceção DataIntegrityViolationException -> EntidadeEmUsoException  
+
+
