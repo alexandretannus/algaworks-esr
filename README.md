@@ -164,3 +164,12 @@ Utilização da anotação @PathVariable
 - @JsonIgnore - Ignorar a propriedade na representação
 
 @JsonProperty possui prioridade sobre @JsonIgnore. Caso ambas sejam colocadas no mesmo atributo @JsonProperty funcionará corretamente e @JsonIgnore será desconsiderada.
+
+### 4.16. Customizando a representação em XML com Wrapper e anotações do Jackson
+Customização da lista no XML. 
+Criação da classe CozinhaXmlWrapper
+Anotações utilizadas: 
+- @JacksonXmlRootElement - define o nome do wrapper da lista
+- @JacksonXmlProperty ou @JsonProperty - define o nome do recurso único
+- @JacksonXmlElementWrapper - elimina a duplicação
+
