@@ -211,3 +211,8 @@ Retirada do suporte a XML
 Implementação do controlador de restaurantes
 - Lista de restaurantes (/restaurantes)
 - Busca de restaurantes (/restaurantes/{id})
+
+### Aula 4.30 - Modelando e implementando a inclusão de recursos de restaurantes
+Implementação de adição de restaurante (POST /restaurantes)
+Criação da classe de serviços de restaurante
+Tratamento de exceção para inserção de restaurante com cozinha inexistente
