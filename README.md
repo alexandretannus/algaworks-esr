@@ -232,3 +232,11 @@ Implementação de serviços de estados e cidades
 Início da implementação de atualização parcial de restaurante (PATCH /restaurantes/{id}).  
 Utilização de mapa (Map)
 
+### Aula 4.34 - Finalizando a atualização parcial com a API de Reflections do Spring
+Utilização da Reflections API para atualização parcial
+- findField
+- getField
+- setField
+
+
+
