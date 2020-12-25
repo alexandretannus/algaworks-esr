@@ -241,9 +241,14 @@ Utilização da Reflections API para atualização parcial
 ## Módulo 5
 
 ### Aula 5.1 - Implementando consultas JPQL em repositórios
-Anotação  @Repository
-Consulta JPQL por nome de cozinha 
+Anotação  @Repository  
+Consulta JPQL por nome de cozinha  
 Utilização de cláusula where
+
+### Aula 5.3 - Criando um repositório com Spring Data JPA (SDJ)
+Exclusão da implementação de respositório de cozinha.  
+Interface de repositório anotada com @Repository e herança de JpaRepository.  
+*Código não executa. Correções na próxima aula*
 
 
 
