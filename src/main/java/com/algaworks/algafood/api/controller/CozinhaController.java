@@ -37,10 +37,10 @@ public class CozinhaController {
         return cozinhaRepository.findAll();
     }
 
-    // @GetMapping("por-nome")
-    // public List<Cozinha> porNome(@RequestParam String nome) {
-    // return cozinhaRepository.consultarPorNome(nome);
-    // }
+    @GetMapping("por-nome")
+    public List<Cozinha> porNome(String nome) {
+        return cozinhaRepository.findByNome(nome);
+    }
 
     @GetMapping("{cozinhaId}")
     public ResponseEntity<Cozinha> buscar(@PathVariable("cozinhaId") Long id) {

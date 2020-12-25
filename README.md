@@ -261,6 +261,8 @@ Utilização dos métodos de JpaRepository para cozinhas
 Remoção das implementações de reposítorio de Restaurante, Cidade, Estado, Permissao e FormaPagamento.  
 Refatoração dos serviços e controladores de Restaurante, Cidade e Estado.  
 
-
+### Aula 5.6 - Criando consultas com query methods
+Método com o nome da propriedade (teste com propriedade nome da classe Cozinha).
+Prefixo findBy
 
 
