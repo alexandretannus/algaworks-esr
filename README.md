@@ -257,5 +257,10 @@ Utilização dos métodos de JpaRepository para cozinhas
 - save
 - deleteById
 
+### Aula 5.5 - Desafio: refatorando todos os repositórios para usar SDJ
+Remoção das implementações de reposítorio de Restaurante, Cidade, Estado, Permissao e FormaPagamento.  
+Refatoração dos serviços e controladores de Restaurante, Cidade e Estado.  
+
+
 
 

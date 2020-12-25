@@ -1,6 +1,7 @@
 package com.algaworks.algafood.api.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.algaworks.algafood.domain.exception.EntidadeEmUsoException;
 import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
@@ -33,14 +34,14 @@ public class EstadoController {
 
     @GetMapping
     public List<Estado> listar() {
-        return estadoRepository.listar();
+        return estadoRepository.findAll();
     }
 
     @GetMapping("{estadoId}")
     public ResponseEntity<Estado> buscar(@PathVariable("estadoId") Long id) {
-        Estado estado = estadoRepository.buscar(id);
+        Optional<Estado> estado = estadoRepository.findById(id);
 
-        return estado != null ? ResponseEntity.ok(estado) : ResponseEntity.notFound().build();
+        return estado.isPresent() ? ResponseEntity.ok(estado.get()) : ResponseEntity.notFound().build();
     }
 
     @PostMapping
@@ -50,12 +51,12 @@ public class EstadoController {
 
     @PutMapping("{estadoId}")
     public ResponseEntity<Estado> atualizar(@PathVariable Long estadoId, @RequestBody Estado estado) {
-        Estado estadoAtual = estadoRepository.buscar(estadoId);
+        Optional<Estado> estadoAtual = estadoRepository.findById(estadoId);
 
-        if (estadoAtual != null) {
-            BeanUtils.copyProperties(estado, estadoAtual, "id");
-            service.salvar(estadoAtual);
-            return ResponseEntity.ok(estadoAtual);
+        if (estadoAtual.isPresent()) {
+            BeanUtils.copyProperties(estado, estadoAtual.get(), "id");
+            Estado estadoSalvo = service.salvar(estadoAtual.get());
+            return ResponseEntity.ok(estadoSalvo);
         }
 
         return ResponseEntity.notFound().build();
