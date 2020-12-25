@@ -219,3 +219,12 @@ Tratamento de exceção para inserção de restaurante com cozinha inexistente
 
 ### Aula 4.31 - Desafio: Modelando e implementando a atualização de recursos de restaurantes
 Implementação da atualização de restaurante (PUT /restaurantes/{id})
+
+### Aula 4.32 - Desafio: implementando serviços REST de cidades e estados
+Implementação de serviços de estados e cidades
+- Listagem (GET /estados - /cidades)
+- Busca (GET /estados/{id} - /cidades/{id})
+- Inclusão (POST /estados - /cidades)
+- Atualização (PUT /estados/{id} - /cidades/{id})
+- Exclusão (DELETE /estados/{id} - /cidades/{id})
+
