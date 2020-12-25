@@ -228,3 +228,7 @@ Implementação de serviços de estados e cidades
 - Atualização (PUT /estados/{id} - /cidades/{id})
 - Exclusão (DELETE /estados/{id} - /cidades/{id})
 
+### Aula 4.33 - Analisando solução para atualização parcial de recursos com PATCH
+Início da implementação de atualização parcial de restaurante (PATCH /restaurantes/{id}).  
+Utilização de mapa (Map)
+
