@@ -250,5 +250,12 @@ Exclusão da implementação de respositório de cozinha.
 Interface de repositório anotada com @Repository e herança de JpaRepository.  
 *Código não executa. Correções na próxima aula*
 
+### Aula 5.4 - Refatorando o código do projeto para usar o repositório do SDJ
+Utilização dos métodos de JpaRepository para cozinhas
+- findAll
+- findById (retorna Optional)
+- save
+- deleteById
+
 
 
