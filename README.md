@@ -216,3 +216,6 @@ Implementação do controlador de restaurantes
 Implementação de adição de restaurante (POST /restaurantes)
 Criação da classe de serviços de restaurante
 Tratamento de exceção para inserção de restaurante com cozinha inexistente
+
+### Aula 4.31 - Desafio: Modelando e implementando a atualização de recursos de restaurantes
+Implementação da atualização de restaurante (PUT /restaurantes/{id})
