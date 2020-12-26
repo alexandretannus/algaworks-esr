@@ -39,7 +39,7 @@ public class CozinhaController {
 
     @GetMapping("por-nome")
     public List<Cozinha> porNome(String nome) {
-        return cozinhaRepository.findByNome(nome);
+        return cozinhaRepository.findByNomeContaining(nome);
     }
 
     @GetMapping("{cozinhaId}")

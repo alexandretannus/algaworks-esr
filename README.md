@@ -265,4 +265,9 @@ Refatoração dos serviços e controladores de Restaurante, Cidade e Estado.
 Método com o nome da propriedade (teste com propriedade nome da classe Cozinha).
 Prefixo findBy
 
+### Aula 5.7 - Usando as keywords para definir critérios de query methods
+- Containing
+- Between
+- And
+Outras palavras chave: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 
