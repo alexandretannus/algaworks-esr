@@ -276,3 +276,7 @@ Outras palavras chave: https://docs.spring.io/spring-data/jpa/docs/current/refer
 - Top<x> - Retorna uma lista com os *x* primeiros elementos
 - Exists - Verifica a existência de um elemento na lista que satisfaz um critério de seleção
 - Count - contagem de elementos da lista que satisfazem um critério de seleção
+
+### Aula 5.9 - Usando queries JPQL customizadas com @Query
+Utilização de @Query para consultas 
+Anotação @Param para compatibilizar nomes de variáveis
