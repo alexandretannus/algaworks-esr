@@ -280,3 +280,6 @@ Outras palavras chave: https://docs.spring.io/spring-data/jpa/docs/current/refer
 ### Aula 5.9 - Usando queries JPQL customizadas com @Query
 Utilização de @Query para consultas 
 Anotação @Param para compatibilizar nomes de variáveis
+
+### Aula 5.10 - Externalizando consultas JPQL para um arquivo XML
+Criação de arquivo orm.xml para colocação da consulta JPQL (Anotação @Query pode ser retirada do método)

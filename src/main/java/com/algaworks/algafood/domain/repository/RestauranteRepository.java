@@ -23,6 +23,5 @@ public interface RestauranteRepository extends JpaRepository<Restaurante, Long> 
 
     int countByCozinhaId(Long cozinha);
 
-    @Query("from Restaurante where nome like %:nome% and cozinha.id=:id")
     List<Restaurante> consultarPorNome(String nome, Long id);
 }
