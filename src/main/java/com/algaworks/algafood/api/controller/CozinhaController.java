@@ -42,6 +42,11 @@ public class CozinhaController {
         return cozinhaRepository.findByNomeContaining(nome);
     }
 
+    @GetMapping("exists")
+    public boolean existsPorNome(String nome) {
+        return cozinhaRepository.existsByNome(nome);
+    }
+
     @GetMapping("{cozinhaId}")
     public ResponseEntity<Cozinha> buscar(@PathVariable("cozinhaId") Long id) {
         Optional<Cozinha> cozinha = cozinhaRepository.findById(id);

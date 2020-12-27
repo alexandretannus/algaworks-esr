@@ -271,3 +271,8 @@ Prefixo findBy
 - And
 Outras palavras chave: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 
+### Aula 5.8 - Conhecendo os prefixos de query methods
+- First - Retorna o primeiro resultado da lista
+- Top<x> - Retorna uma lista com os *x* primeiros elementos
+- Exists - Verifica a existência de um elemento na lista que satisfaz um critério de seleção
+- Count - contagem de elementos da lista que satisfazem um critério de seleção
