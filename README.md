@@ -283,3 +283,8 @@ Anotação @Param para compatibilizar nomes de variáveis
 
 ### Aula 5.10 - Externalizando consultas JPQL para um arquivo XML
 Criação de arquivo orm.xml para colocação da consulta JPQL (Anotação @Query pode ser retirada do método)
+
+### Aula 5.11 - Implementando um repositório SDJ customizado
+Implementação de métodos de forma customizada.
+Padrão de nome da classe: <nome-da-interface-do-repositorio>Impl
+Extração de interface customizada e herança múltipla de interface no repositório
