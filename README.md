@@ -294,3 +294,7 @@ Consulta dinâmica utilizando JPQL e Hashmap. Possibilidade de utilizar apenas a
 
 ### Aula 5.13 - Implementando uma consulta simples com Criteria API
 Introdução à Criteria API. Consulta simples para lista de restaurantes
+
+### Aula 5.14 - Adicionando restrições na cláusula where com Criteria API
+Consultas não dinâmicas com Criteria API e cláusula where.  
+Necessário utilizar Predicates
