@@ -298,3 +298,6 @@ Introdução à Criteria API. Consulta simples para lista de restaurantes
 ### Aula 5.14 - Adicionando restrições na cláusula where com Criteria API
 Consultas não dinâmicas com Criteria API e cláusula where.  
 Necessário utilizar Predicates
+
+### Aula 5.15 - Tornando a consulta com Criteria API com filtros dinâmicos
+Implementação de lista dinâmica de filtros com ArrayList de Predicate
