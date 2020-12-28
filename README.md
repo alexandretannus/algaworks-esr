@@ -291,3 +291,6 @@ Extração de interface customizada e herança múltipla de interface no reposit
 
 ### Aula 5.12 - Implementando uma consulta dinâmica com JPQL
 Consulta dinâmica utilizando JPQL e Hashmap. Possibilidade de utilizar apenas alguns parâmetros
+
+### Aula 5.13 - Implementando uma consulta simples com Criteria API
+Introdução à Criteria API. Consulta simples para lista de restaurantes
