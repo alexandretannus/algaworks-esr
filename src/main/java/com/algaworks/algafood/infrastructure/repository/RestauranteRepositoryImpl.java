@@ -1,15 +1,18 @@
 package com.algaworks.algafood.infrastructure.repository;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.RestauranteRepositoryQueries;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.StringUtils;
 
 @Repository
 public class RestauranteRepositoryImpl implements RestauranteRepositoryQueries {
@@ -19,10 +22,30 @@ public class RestauranteRepositoryImpl implements RestauranteRepositoryQueries {
 
     @Override
     public List<Restaurante> find(String nome, BigDecimal taxaFreteInicial, BigDecimal taxaFreteFinal) {
-        var jpql = "from Restaurante where nome like :nome and taxaFrete between :taxaFreteInicial and :taxaFreteFinal";
+        var jpql = new StringBuilder();
+        jpql.append("from Restaurante where 0=0 ");
 
-        return entityManager.createQuery(jpql, Restaurante.class).setParameter("nome", "%" + nome + "%")
-                .setParameter("taxaFreteInicial", taxaFreteInicial).setParameter("taxaFreteFinal", taxaFreteFinal)
-                .getResultList();
+        var parametros = new HashMap<String, Object>();
+
+        if (StringUtils.hasLength(nome)) {
+            jpql.append("and nome like :nome ");
+            parametros.put("nome", "%" + nome + "%");
+        }
+
+        if (taxaFreteInicial != null) {
+            jpql.append("and taxaFrete >= :taxaFreteInicial ");
+            parametros.put("taxaFreteInicial", taxaFreteInicial);
+        }
+
+        if (taxaFreteFinal != null) {
+            jpql.append("and taxaFrete <= :taxaFreteFinal ");
+            parametros.put("taxaFreteFinal", taxaFreteFinal);
+        }
+
+        TypedQuery<Restaurante> query = entityManager.createQuery(jpql.toString(), Restaurante.class);
+
+        parametros.forEach((chave, valor) -> query.setParameter(chave, valor));
+
+        return query.getResultList();
     }
 }

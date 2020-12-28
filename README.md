@@ -285,6 +285,9 @@ Anotação @Param para compatibilizar nomes de variáveis
 Criação de arquivo orm.xml para colocação da consulta JPQL (Anotação @Query pode ser retirada do método)
 
 ### Aula 5.11 - Implementando um repositório SDJ customizado
-Implementação de métodos de forma customizada.
-Padrão de nome da classe: <nome-da-interface-do-repositorio>Impl
+Implementação de métodos de forma customizada.  
+Padrão de nome da classe: <nome-da-interface-do-repositorio>Impl  
 Extração de interface customizada e herança múltipla de interface no repositório
+
+### Aula 5.12 - Implementando uma consulta dinâmica com JPQL
+Consulta dinâmica utilizando JPQL e Hashmap. Possibilidade de utilizar apenas alguns parâmetros
