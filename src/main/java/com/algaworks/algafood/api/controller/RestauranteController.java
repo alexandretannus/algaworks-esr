@@ -9,6 +9,8 @@ import java.util.Optional;
 import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
+import com.algaworks.algafood.domain.repository.spec.RestauranteComFreteGratisSpec;
+import com.algaworks.algafood.domain.repository.spec.RestauranteComNomeSemelhanteSpec;
 import com.algaworks.algafood.domain.service.CadastroRestauranteService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -113,6 +115,13 @@ public class RestauranteController {
 
         return atualizar(restauranteId, restauranteAtual.get());
 
+    }
+
+    @GetMapping("/com-frete-gratis")
+    public List<Restaurante> restaurantesComFreteGratis(String nome) {
+        var comFreteGratis = new RestauranteComFreteGratisSpec();
+        var comNomeSemelhante = new RestauranteComNomeSemelhanteSpec(nome);
+        return restauranteRepository.findAll(comFreteGratis.and(comNomeSemelhante));
     }
 
     private void merge(Map<String, Object> camposOrigem, Restaurante restauranteDestino) {

@@ -301,3 +301,9 @@ Necessário utilizar Predicates
 
 ### Aula 5.15 - Tornando a consulta com Criteria API com filtros dinâmicos
 Implementação de lista dinâmica de filtros com ArrayList de Predicate
+
+### Aula 5.17 - Implementando Specifications com SDJ
+Criação das specifications *ComFreteGratis* e *ComNomeSemlhante*
+Classes herdam de Specification (org.springframework.data.jpa.domain.Specification)
+Ajuste do repositório para herdar a interface JpaSpecificationExecutor (org.springframework.data.jpa.repository.JpaSpecificationExecutor)
+
