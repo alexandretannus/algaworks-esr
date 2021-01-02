@@ -307,3 +307,6 @@ Criação das specifications *ComFreteGratis* e *ComNomeSemlhante*
 Classes herdam de Specification (org.springframework.data.jpa.domain.Specification)
 Ajuste do repositório para herdar a interface JpaSpecificationExecutor (org.springframework.data.jpa.repository.JpaSpecificationExecutor)
 
+### Aula 5.18 - Criando uma fábrica de Specifications
+Fábrica de Specifications para restaurantes
+Exclusão das classes individuais referentes às specifications *ComFreteGratis* e *ComNomeSemlhante*
