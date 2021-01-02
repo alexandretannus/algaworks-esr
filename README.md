@@ -332,3 +332,6 @@ Anotação @JoinTable com propriedades joinColumns e inverseJoinColumns
 
 ### Aula 6.4 - Mapeando classes incorporáveis com @Embedded e @Embeddable
 Mapeamento de classes embutidas. Exemplo com endereço e restaurante
+
+### Aula 6.6 - Mapeando propriedades com @CreationTimestamp e @UpdateTimestamp
+Utilização de timestamps de criação e atualização de dados com anotações próprias do Hibernate. 
