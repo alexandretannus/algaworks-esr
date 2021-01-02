@@ -318,3 +318,10 @@ Problema de referência circular do repositório - corrigido com anotação @Laz
 ### Aula 5.20 - Estendendo o JpaRepository para customizar o repositório base
 Criação do CustomJpaRepository para implementações comuns a várias classes
 Habilitação do novo repositório em AlgafoodApiApplication com anotação @EnableJpaRepositories(repositoryBaseClass = CustomJpaRepositoryImpl.class)
+
+## Módulo 6
+
+### Aula 6.1 - Mapeando relacionamento bidirecional com @OneToMany
+Implementação de relacionamento bidirecional entre restaurante e cozinha
+Anotação @OneToMany com propriedade mappedBy
+Correção de referência circular entre entidades com @JsonIgnore
