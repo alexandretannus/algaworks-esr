@@ -310,3 +310,7 @@ Ajuste do repositório para herdar a interface JpaSpecificationExecutor (org.spr
 ### Aula 5.18 - Criando uma fábrica de Specifications
 Fábrica de Specifications para restaurantes
 Exclusão das classes individuais referentes às specifications *ComFreteGratis* e *ComNomeSemlhante*
+
+### Aula 5.19 - Injetando o próprio repositório na implementação customizada e a anotação @Lazy
+Mudança da chamada das specs para o repositório customizado
+Problema de referência circular do repositório - corrigido com anotação @Lazy
