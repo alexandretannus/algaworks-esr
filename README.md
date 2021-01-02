@@ -329,3 +329,6 @@ Correção de referência circular entre entidades com @JsonIgnore
 ### Aula 6.2 - Mapeando relacionamento muitos-para-muitos com @ManyToMany
 Implementação de relacionamento muitos para muitos entre *Restaurante* e *FormasPagamento*.  
 Anotação @JoinTable com propriedades joinColumns e inverseJoinColumns
+
+### Aula 6.4 - Mapeando classes incorporáveis com @Embedded e @Embeddable
+Mapeamento de classes embutidas. Exemplo com endereço e restaurante
