@@ -303,25 +303,29 @@ Necessário utilizar Predicates
 Implementação de lista dinâmica de filtros com ArrayList de Predicate
 
 ### Aula 5.17 - Implementando Specifications com SDJ
-Criação das specifications *ComFreteGratis* e *ComNomeSemlhante*
-Classes herdam de Specification (org.springframework.data.jpa.domain.Specification)
+Criação das specifications *ComFreteGratis* e *ComNomeSemlhante*.  
+Classes herdam de Specification (org.springframework.data.jpa.domain.Specification).  
 Ajuste do repositório para herdar a interface JpaSpecificationExecutor (org.springframework.data.jpa.repository.JpaSpecificationExecutor)
 
 ### Aula 5.18 - Criando uma fábrica de Specifications
-Fábrica de Specifications para restaurantes
+Fábrica de Specifications para restaurantes.  
 Exclusão das classes individuais referentes às specifications *ComFreteGratis* e *ComNomeSemlhante*
 
 ### Aula 5.19 - Injetando o próprio repositório na implementação customizada e a anotação @Lazy
-Mudança da chamada das specs para o repositório customizado
+Mudança da chamada das specs para o repositório customizado.  
 Problema de referência circular do repositório - corrigido com anotação @Lazy
 
 ### Aula 5.20 - Estendendo o JpaRepository para customizar o repositório base
-Criação do CustomJpaRepository para implementações comuns a várias classes
+Criação do CustomJpaRepository para implementações comuns a várias classes.  
 Habilitação do novo repositório em AlgafoodApiApplication com anotação @EnableJpaRepositories(repositoryBaseClass = CustomJpaRepositoryImpl.class)
 
 ## Módulo 6
 
 ### Aula 6.1 - Mapeando relacionamento bidirecional com @OneToMany
-Implementação de relacionamento bidirecional entre restaurante e cozinha
-Anotação @OneToMany com propriedade mappedBy
+Implementação de relacionamento bidirecional entre restaurante e cozinha.  
+Anotação @OneToMany com propriedade mappedBy.  
 Correção de referência circular entre entidades com @JsonIgnore
+
+### Aula 6.2 - Mapeando relacionamento muitos-para-muitos com @ManyToMany
+Implementação de relacionamento muitos para muitos entre *Restaurante* e *FormasPagamento*.  
+Anotação @JoinTable com propriedades joinColumns e inverseJoinColumns
