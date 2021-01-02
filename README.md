@@ -314,3 +314,7 @@ Exclusão das classes individuais referentes às specifications *ComFreteGratis*
 ### Aula 5.19 - Injetando o próprio repositório na implementação customizada e a anotação @Lazy
 Mudança da chamada das specs para o repositório customizado
 Problema de referência circular do repositório - corrigido com anotação @Lazy
+
+### Aula 5.20 - Estendendo o JpaRepository para customizar o repositório base
+Criação do CustomJpaRepository para implementações comuns a várias classes
+Habilitação do novo repositório em AlgafoodApiApplication com anotação @EnableJpaRepositories(repositoryBaseClass = CustomJpaRepositoryImpl.class)
