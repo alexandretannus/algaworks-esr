@@ -338,3 +338,7 @@ Utilização de timestamps de criação e atualização de dados com anotações
 
 ### Aula 6.7 - Desafio: mapeando relacionamento muitos-para-um
 Mapeamento da entidade Produto com relacionamento muitos-pra-um com a entidade Restaurante
+
+### Aula 6.8 - Desafio: mapeando relacionamento um-para-muitos
+Mapeamento do relacionamento um para muitos entre Restaurante e Produto.  
+Correção no controller de produto para evitar problemas na atualização dos dados.
