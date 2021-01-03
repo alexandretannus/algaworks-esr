@@ -348,3 +348,6 @@ Criação das entidades Grupo e Usuario.
 Mapeamento muitos para muitos entre
 - Usuario e Grupo
 - Grupo e Permissao
+
+### Aula 6.14 - Resolvendo o Problema do N+1 com fetch join na JPQL
+Correção do problema N+1, que gera excesso de consultas SQL. Utilização do join fetch na consulta JPQL.
