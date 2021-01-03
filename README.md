@@ -342,3 +342,9 @@ Mapeamento da entidade Produto com relacionamento muitos-pra-um com a entidade R
 ### Aula 6.8 - Desafio: mapeando relacionamento um-para-muitos
 Mapeamento do relacionamento um para muitos entre Restaurante e Produto.  
 Correção no controller de produto para evitar problemas na atualização dos dados.
+
+### Aula 6.9 - Desafio: mapeando relacionamento muitos-para-muitos
+Criação das entidades Grupo e Usuario.  
+Mapeamento muitos para muitos entre
+- Usuario e Grupo
+- Grupo e Permissao
