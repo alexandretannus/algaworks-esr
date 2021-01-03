@@ -335,3 +335,6 @@ Mapeamento de classes embutidas. Exemplo com endereço e restaurante
 
 ### Aula 6.6 - Mapeando propriedades com @CreationTimestamp e @UpdateTimestamp
 Utilização de timestamps de criação e atualização de dados com anotações próprias do Hibernate. 
+
+### Aula 6.7 - Desafio: mapeando relacionamento muitos-para-um
+Mapeamento da entidade Produto com relacionamento muitos-pra-um com a entidade Restaurante
