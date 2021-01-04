@@ -393,3 +393,9 @@ Formas de reparação de erros em migrações
 
 ### Aula 7.12 - Desafio: Criando migrações e mapeando as entidades Pedido e ItemPedido
 Criação das migrações e das entidades Pedido e ItemPedido considerando todos os relacionamentos envolvidos.  
+
+## Módulo 8
+
+### Aula 8.2 - Lançando exceções customizadas anotadas com @ResponseStatus
+Anotação das exceções EntidadeEmUsoException e EntidadeNaoEncontradaException com @ResponseStatus
+Alteração do controller de Cozinha 
