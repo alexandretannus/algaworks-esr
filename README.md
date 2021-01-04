@@ -397,5 +397,10 @@ Criação das migrações e das entidades Pedido e ItemPedido considerando todos
 ## Módulo 8
 
 ### Aula 8.2 - Lançando exceções customizadas anotadas com @ResponseStatus
-Anotação das exceções EntidadeEmUsoException e EntidadeNaoEncontradaException com @ResponseStatus
+Anotação das exceções EntidadeEmUsoException e EntidadeNaoEncontradaException com @ResponseStatus.  
 Alteração do controller de Cozinha 
+
+### Aula 8.3 - Lançando exceções do tipo ResponseStatusException
+Utilização da classe ResponseStatusException para lançamento de exceções customizadas com status HTTP e mensagem de erro.  
+WebServerInputException herda de ResponseStatusException e retorna código 400 (Bad Request) por padrão.
+
