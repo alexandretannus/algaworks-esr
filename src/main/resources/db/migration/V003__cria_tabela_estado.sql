@@ -1,5 +1,5 @@
 CREATE TABLE estado (
-    id BIGINT NOT NULL AUTO_INCREMENT,
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(80) NOT NULL
 ) engine=InnoDB default charset=utf8;
 
@@ -9,7 +9,7 @@ ALTER TABLE cidade ADD COLUMN estado_id BIGINT NOT NULL;
 
 UPDATE cidade c SET c.estado_id = 
     (SELECT e.id FROM estado e
-        WHERE e.nome = c.estado_nome);
+        WHERE e.nome = c.nome_estado);
 
 ALTER TABLE cidade ADD CONSTRAINT fk_cidade_estado
     FOREIGN KEY (estado_id) REFERENCES estado(id);

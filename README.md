@@ -382,3 +382,6 @@ Migração das tabelas
 Utilização de propriedades de spring.jpa.properties.javax.persistence.schema-generation.scripts
 - action: tipo de ação desejada (create)
 - create-target: arquivo de destino
+
+### Aula 7.10 - Adicionando dados de testes com callback do Flyway
+Callback afterMigrate e configuração de locations para o flyway

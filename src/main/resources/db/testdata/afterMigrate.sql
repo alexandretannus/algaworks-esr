@@ -1,5 +1,32 @@
-INSERT INTO cozinha(id, nome) VALUES (1, 'Tailandesa');
-INSERT INTO cozinha(id, nome) VALUES (2, 'Indiana');
+SET foreign_key_checks = 0;
+
+DELETE FROM cidade;
+DELETE FROM cozinha;
+DELETE FROM estado;
+DELETE FROM forma_pagamento;
+DELETE FROM grupo;
+DELETE FROM grupo_permissao;
+DELETE FROM permissao;
+DELETE FROM produto;
+DELETE FROM restaurante;
+DELETE FROM restaurante_forma_pagamento;
+DELETE FROM usuario;
+DELETE FROM usuario_grupo;
+
+SET foreign_key_checks = 1;
+
+ALTER TABLE cidade auto_increment = 1;
+ALTER TABLE cozinha auto_increment = 1;
+ALTER TABLE estado auto_increment = 1;
+ALTER TABLE forma_pagamento auto_increment = 1;
+ALTER TABLE grupo auto_increment = 1;
+ALTER TABLE permissao auto_increment = 1;
+ALTER TABLE produto auto_increment = 1;
+ALTER TABLE restaurante auto_increment = 1;
+ALTER TABLE usuario auto_increment = 1;
+
+INSERT INTO cozinha (id, nome) VALUES (1, 'Tailandesa');
+INSERT INTO cozinha (id, nome) VALUES (2, 'Indiana');
 INSERT INTO cozinha (id, nome) VALUES (3, 'Argentina');
 INSERT INTO cozinha (id, nome) VALUES (4, 'Brasileira');
 
@@ -19,9 +46,10 @@ INSERT INTO restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_a
 INSERT INTO restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao) VALUES (4, 'Java Steakhouse', 12, 3, utc_timestamp, utc_timestamp);
 INSERT INTO restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao) VALUES (5, 'Lanchonete do Tio Sam', 11, 4, utc_timestamp, utc_timestamp);
 INSERT INTO restaurante (id, nome, taxa_frete, cozinha_id, data_cadastro, data_atualizacao) VALUES (6, 'Bar da Maria', 6, 4, utc_timestamp, utc_timestamp);
-INSERT INTO forma_pagamento (id, nome) VALUES (1, 'Cartão de crédito');
-INSERT INTO forma_pagamento (id, nome) VALUES (2, 'Cartão de débito');
-INSERT INTO forma_pagamento (id, nome) VALUES (3, 'Dinheiro');
+
+INSERT INTO forma_pagamento (id, descricao) VALUES (1, 'Cartão de crédito');
+INSERT INTO forma_pagamento (id, descricao) VALUES (2, 'Cartão de débito');
+INSERT INTO forma_pagamento (id, descricao) VALUES (3, 'Dinheiro');
 
 INSERT INTO permissao (id, nome, descricao) VALUES (1, 'CONSULTAR_COZINHAS', 'Permite consultar cozinhas');
 INSERT INTO permissao (id, nome, descricao) VALUES (2, 'EDITAR_COZINHAS', 'Permite editar cozinhas');
