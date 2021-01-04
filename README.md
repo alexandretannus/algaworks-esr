@@ -413,3 +413,6 @@ Criação do método buscarOuFalhar na classe de serviços de cozinha
 
 ### Aula 8.6 - Desafio: refatorando os serviços REST
 Refatoração dos serviços e controladores de restaurante, cidade e estado
+
+### Aula 8.8 - Criando a exception NegocioException
+Criação da exceção de negócio (NegocioException) e refatoração do controlador de cidade para utilizar a exceção
