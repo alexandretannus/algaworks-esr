@@ -351,3 +351,8 @@ Mapeamento muitos para muitos entre
 
 ### Aula 6.14 - Resolvendo o Problema do N+1 com fetch join na JPQL
 Correção do problema N+1, que gera excesso de consultas SQL. Utilização do join fetch na consulta JPQL.
+
+## Módulo 7 
+
+### 7.3 - Configurando o pool de conexões do Hikari
+Configuração de mínimo e máximo de conexões e tempo ocioso (idle-timeout)
