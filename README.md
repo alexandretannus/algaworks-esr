@@ -385,3 +385,8 @@ Utilização de propriedades de spring.jpa.properties.javax.persistence.schema-g
 
 ### Aula 7.10 - Adicionando dados de testes com callback do Flyway
 Callback afterMigrate e configuração de locations para o flyway
+
+### Aula 7.11 - Reparando migrações com erros
+Formas de reparação de erros em migrações
+- Exclusão da linha da migração na tabela flyway-schema e correção da migração
+- mvnw flyway:repair -Dflyway.cofigFiles=<caminho-para-arquivo-config-flyway>
