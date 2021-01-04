@@ -363,3 +363,7 @@ Padrão: V<numero>__<nome>.sql
 
 ### Aula 7.7 - Evoluindo o banco de dados com novas migrações
 Migração da tabela cidade (sem foreign key para estado)
+
+### Aula 7.8 - Criando migrações complexas com remanejamento de dados
+Migração da tabela estado.
+Ajuste da tabela cidade para receber a chave estrangeira de estado
