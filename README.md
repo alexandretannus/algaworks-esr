@@ -410,3 +410,6 @@ Classe EntidadeNaoEncontradaException herda de ResponseStatusException
 ### Aula 8.5 - Simplificando o código com o uso de @ResponseStatus em exceptions
 Refatoração do código do controlador de cozinha.  
 Criação do método buscarOuFalhar na classe de serviços de cozinha
+
+### Aula 8.6 - Desafio: refatorando os serviços REST
+Refatoração dos serviços e controladores de restaurante, cidade e estado

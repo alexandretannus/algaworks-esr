@@ -1,12 +1,9 @@
 package com.algaworks.algafood.api.controller;
 
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
-import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
 import com.algaworks.algafood.domain.service.CadastroRestauranteService;
@@ -15,7 +12,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -24,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -41,84 +38,40 @@ public class RestauranteController {
         return restauranteRepository.findAll();
     }
 
-    @GetMapping("por-taxa-frete")
-    public List<Restaurante> taxaFreteEntre(BigDecimal taxaInicial, BigDecimal taxaFinal) {
-        return restauranteRepository.findByTaxaFreteBetween(taxaInicial, taxaFinal);
-    }
-
-    @GetMapping("por-nome-id")
-    public List<Restaurante> buscarPorNomeECozinhaId(String nome, Long id) {
-        return restauranteRepository.consultarPorNome(nome, id);
-    }
-
-    @GetMapping("primeiro-por-nome")
-    public Optional<Restaurante> buscarPrimeiroPorNome(String nome) {
-        return restauranteRepository.findFirstRestauranteByNomeContaining(nome);
-    }
-
-    @GetMapping("/top2-por-nome")
-    public List<Restaurante> restaurantesTop2PorNome(String nome) {
-        return restauranteRepository.findTop3ByNomeContaining(nome);
-    }
-
-    @GetMapping("count")
-    public int countPorNome(Long id) {
-        return restauranteRepository.countByCozinhaId(id);
-    }
-
     @GetMapping("{restauranteId}")
-    public ResponseEntity<Restaurante> buscar(@PathVariable("restauranteId") Long id) {
-        Optional<Restaurante> restaurante = restauranteRepository.findById(id);
-
-        return restaurante.isPresent() ? ResponseEntity.ok(restaurante.get()) : ResponseEntity.notFound().build();
+    @ResponseStatus(HttpStatus.OK)
+    public Restaurante buscar(@PathVariable("restauranteId") Long restauranteId) {
+        return service.buscarOuFalhar(restauranteId);
     }
 
     @PostMapping
-    public ResponseEntity<?> adicionar(@RequestBody Restaurante restaurante) {
-        try {
-            restaurante = service.salvar(restaurante);
-            return ResponseEntity.status(HttpStatus.CREATED).body(restaurante);
-        } catch (EntidadeNaoEncontradaException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+    @ResponseStatus(HttpStatus.CREATED)
+    public Restaurante adicionar(@RequestBody Restaurante restaurante) {
+        return restaurante = service.salvar(restaurante);
     }
 
     @PutMapping("/{restauranteId}")
-    public ResponseEntity<?> atualizar(@PathVariable Long restauranteId, @RequestBody Restaurante restaurante) {
-        try {
-            Optional<Restaurante> restauranteAtual = restauranteRepository.findById(restauranteId);
+    @ResponseStatus(HttpStatus.OK)
+    public Restaurante atualizar(@PathVariable Long restauranteId, @RequestBody Restaurante restaurante) {
 
-            if (restauranteAtual.isPresent()) {
-                BeanUtils.copyProperties(restaurante, restauranteAtual.get(), "id", "formasPagamento", "endereco",
-                        "dataCadastro", "produtos");
-                Restaurante restauranteSalvo = service.salvar(restauranteAtual.get());
-                return ResponseEntity.ok(restauranteSalvo);
-            }
-            return ResponseEntity.notFound().build();
-        } catch (EntidadeNaoEncontradaException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        }
+        Restaurante restauranteAtual = service.buscarOuFalhar(restauranteId);
+
+        BeanUtils.copyProperties(restaurante, restauranteAtual, "id", "formasPagamento", "endereco", "dataCadastro",
+                "produtos");
+        return service.salvar(restauranteAtual);
+
     }
 
     @PatchMapping("/{restauranteId}")
-    public ResponseEntity<?> atualizarParcial(@PathVariable Long restauranteId,
-            @RequestBody Map<String, Object> campos) {
+    @ResponseStatus(HttpStatus.OK)
+    public Restaurante atualizarParcial(@PathVariable Long restauranteId, @RequestBody Map<String, Object> campos) {
 
-        Optional<Restaurante> restauranteAtual = restauranteRepository.findById(restauranteId);
+        Restaurante restauranteAtual = service.buscarOuFalhar(restauranteId);
 
-        if (restauranteAtual.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
+        merge(campos, restauranteAtual);
 
-        merge(campos, restauranteAtual.get());
+        return atualizar(restauranteId, restauranteAtual);
 
-        return atualizar(restauranteId, restauranteAtual.get());
-
-    }
-
-    @GetMapping("/com-frete-gratis")
-    public List<Restaurante> restaurantesComFreteGratis(String nome) {
-        return restauranteRepository.findComFreteGratis(nome);
     }
 
     private void merge(Map<String, Object> camposOrigem, Restaurante restauranteDestino) {

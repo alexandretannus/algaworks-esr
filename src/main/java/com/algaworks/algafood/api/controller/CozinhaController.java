@@ -35,16 +35,6 @@ public class CozinhaController {
         return cozinhaRepository.findAll();
     }
 
-    @GetMapping("por-nome")
-    public List<Cozinha> porNome(String nome) {
-        return cozinhaRepository.findByNomeContaining(nome);
-    }
-
-    @GetMapping("exists")
-    public boolean existsPorNome(String nome) {
-        return cozinhaRepository.existsByNome(nome);
-    }
-
     @GetMapping("{cozinhaId}")
     public Cozinha buscar(@PathVariable("cozinhaId") Long id) {
         return service.buscarOuFalhar(id);
