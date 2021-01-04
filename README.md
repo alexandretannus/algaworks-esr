@@ -390,3 +390,6 @@ Callback afterMigrate e configuração de locations para o flyway
 Formas de reparação de erros em migrações
 - Exclusão da linha da migração na tabela flyway-schema e correção da migração
 - mvnw flyway:repair -Dflyway.cofigFiles=<caminho-para-arquivo-config-flyway>
+
+### Aula 7.12 - Desafio: Criando migrações e mapeando as entidades Pedido e ItemPedido
+Criação das migrações e das entidades Pedido e ItemPedido considerando todos os relacionamentos envolvidos.  
