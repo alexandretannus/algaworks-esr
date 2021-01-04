@@ -367,3 +367,18 @@ Migração da tabela cidade (sem foreign key para estado)
 ### Aula 7.8 - Criando migrações complexas com remanejamento de dados
 Migração da tabela estado.
 Ajuste da tabela cidade para receber a chave estrangeira de estado
+
+### Aula 7.9 - Criando migração a partir de DDL gerado por schema generation
+Migração das tabelas
+- restaurante
+- forma_pagamento
+- restaurante_forma_pagamento
+- produto 
+- permissao
+- grupo
+- usuario
+- grupo_permissao
+- usuario_grupo
+Utilização de propriedades de spring.jpa.properties.javax.persistence.schema-generation.scripts
+- action: tipo de ação desejada (create)
+- create-target: arquivo de destino
