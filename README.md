@@ -358,5 +358,8 @@ Correção do problema N+1, que gera excesso de consultas SQL. Utilização do j
 Configuração de mínimo e máximo de conexões e tempo ocioso (idle-timeout)
 
 ### Aula 7.6 - Adicionando o Flyway no projeto e criando a primeira migração
-Migração para tabela cozinha
+Migração para tabela cozinha.  
 Padrão: V<numero>__<nome>.sql
+
+### Aula 7.7 - Evoluindo o banco de dados com novas migrações
+Migração da tabela cidade (sem foreign key para estado)
