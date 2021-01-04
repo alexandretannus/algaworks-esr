@@ -354,5 +354,9 @@ Correção do problema N+1, que gera excesso de consultas SQL. Utilização do j
 
 ## Módulo 7 
 
-### 7.3 - Configurando o pool de conexões do Hikari
+### Aula 7.3 - Configurando o pool de conexões do Hikari
 Configuração de mínimo e máximo de conexões e tempo ocioso (idle-timeout)
+
+### Aula 7.6 - Adicionando o Flyway no projeto e criando a primeira migração
+Migração para tabela cozinha
+Padrão: V<numero>__<nome>.sql
