@@ -406,3 +406,7 @@ WebServerInputException herda de ResponseStatusException e retorna código 400 (
 
 ### Aula 8.4 - Estendendo ResponseStatusException
 Classe EntidadeNaoEncontradaException herda de ResponseStatusException 
+
+### Aula 8.5 - Simplificando o código com o uso de @ResponseStatus em exceptions
+Refatoração do código do controlador de cozinha.  
+Criação do método buscarOuFalhar na classe de serviços de cozinha
