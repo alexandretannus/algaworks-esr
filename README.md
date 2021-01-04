@@ -404,3 +404,5 @@ Alteração do controller de Cozinha
 Utilização da classe ResponseStatusException para lançamento de exceções customizadas com status HTTP e mensagem de erro.  
 WebServerInputException herda de ResponseStatusException e retorna código 400 (Bad Request) por padrão.
 
+### Aula 8.4 - Estendendo ResponseStatusException
+Classe EntidadeNaoEncontradaException herda de ResponseStatusException 

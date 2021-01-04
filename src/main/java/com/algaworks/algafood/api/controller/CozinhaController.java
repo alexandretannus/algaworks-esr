@@ -3,7 +3,6 @@ package com.algaworks.algafood.api.controller;
 import java.util.List;
 import java.util.Optional;
 
-import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
 import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.repository.CozinhaRepository;
 import com.algaworks.algafood.domain.service.CadastroCozinhaService;
@@ -21,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping(value = "cozinhas")
@@ -77,12 +75,7 @@ public class CozinhaController {
     @DeleteMapping("{cozinhaId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void excluir(@PathVariable Long cozinhaId) {
-        try {
-            service.remover(cozinhaId);
-        } catch (EntidadeNaoEncontradaException e) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
-            // throw new ServerWebInputException(e.getMessage());
-        }
+        service.remover(cozinhaId);
     }
 
 }
