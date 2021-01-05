@@ -419,3 +419,7 @@ Criação da exceção de negócio (NegocioException) e refatoração do control
 
 ### Aula 8.9 - Desafio: usando a exception NegocioException
 Refatoração do controlador de restaurante para utilizar a exceção NegocioException
+
+### Aula 8.10 - Afinando a granularidade e definindo a hierarquia das exceptions de negócios
+Criação de classe de exceção específica para estado não encontrado (EstadoNaoEncontradoException).  
+Hierarquia de exceções: Exception -> RuntimeException -> NegocioException -> EntidadeNaoEncontradaException -> EstadoNaoEncontradoException
