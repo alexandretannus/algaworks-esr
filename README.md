@@ -423,3 +423,6 @@ Refatoração do controlador de restaurante para utilizar a exceção NegocioExc
 ### Aula 8.10 - Afinando a granularidade e definindo a hierarquia das exceptions de negócios
 Criação de classe de exceção específica para estado não encontrado (EstadoNaoEncontradoException).  
 Hierarquia de exceções: Exception -> RuntimeException -> NegocioException -> EntidadeNaoEncontradaException -> EstadoNaoEncontradoException
+
+### Aula 8.11 - Desafio: lançando exceptions de granularidade fina
+Criação e configuração de exceções de granularidade fina para Restaurante, Cidade e Cozinha.
