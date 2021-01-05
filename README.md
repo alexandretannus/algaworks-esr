@@ -435,3 +435,6 @@ Uso da anotação @Builder para criar um construtor (builder) para a classe Prob
 ### Aula 8.13 - Tratando exceções globais com @ExceptionHandler e @ControllerAdvice
 Criação de classe de tratamento de exceções de forma global (ApiExceptionHandler) utilizando anotação @ControllerAdvice.  
 Implementação de tratamento de exceção de tipo de mídia não suportado (HttpMediaTypeNotSupportedException).  
+
+### Aula 8.14 - Desafio: implementando exception handler
+Implementação de tratamento de exceção global para EntidadeEmUsoException.  
