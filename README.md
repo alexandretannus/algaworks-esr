@@ -416,3 +416,6 @@ Refatoração dos serviços e controladores de restaurante, cidade e estado
 
 ### Aula 8.8 - Criando a exception NegocioException
 Criação da exceção de negócio (NegocioException) e refatoração do controlador de cidade para utilizar a exceção
+
+### Aula 8.9 - Desafio: usando a exception NegocioException
+Refatoração do controlador de restaurante para utilizar a exceção NegocioException
