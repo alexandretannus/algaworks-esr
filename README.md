@@ -426,3 +426,8 @@ Hierarquia de exceções: Exception -> RuntimeException -> NegocioException -> E
 
 ### Aula 8.11 - Desafio: lançando exceptions de granularidade fina
 Criação e configuração de exceções de granularidade fina para Restaurante, Cidade e Cozinha.
+
+### Aula 8.12 - Tratando exceções em nível de controlador com @ExceptionHandler
+Tratamento de exceções no controlador de cidades com mensagens customizadas.  
+Criação de classe para customização da mensagem de erro (Problema.java).  
+Uso da anotação @Builder para criar um construtor (builder) para a classe Problema.  
