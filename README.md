@@ -449,6 +449,9 @@ Refatoração dos métodos de lançamento de exceção para utilizar o handleExc
 
 ### Aula 8.18 - Padronizando o formato de problemas no corpo de respostas com a RFC 7807
 Corpo da resposta com parâmetros definidos pela RFC 7807 (status, type, title, detail).  
-Criação do enum ProblemType
-Criação do método createProblemBuilder em ApiHandlerException
+Criação do enum ProblemType.  
+Criação do método createProblemBuilder em ApiHandlerException.  
 Refatoração do método handleEntidadeNaoEncontradaException para utilizar a RFC 7807
+
+### Aula 8.19 - Desafio: usando o formato de problemas no corpo de respostas
+Refatoração dos métodos handleEntidadeEmUsoException e handleNegocioException de acordo com a RFC 7807. 
