@@ -462,3 +462,8 @@ Sobrescrita do método handleHttpMessageNotReadable para customização seguindo
 ### Aula 8.21. Tratando a exception InvalidFormatException na desserialização
 Tratamento de tipo de dados inválido.  
 Adição no pom.xml da dependência Apache Commons Lang3 (commons-lang3)
+
+### Aula 8.22 - Habilitando erros na desserialização de propriedades inexistentes ou ignoradas
+Alteração de application.properties para lançamento de erros na desserialização
+- Propriedade ignorada - spring.jackson.deserialization.fail-on-ignored-properties=true
+- Propriedade inexistente - spring.jackson.deserialization.fail-on-unknown-properties=true
