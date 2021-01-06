@@ -471,3 +471,8 @@ Alteração de application.properties para lançamento de erros na desserializa�
 
 ### Aula 8.23 - Desafio: tratando a PropertyBindingException na desserialização
 Tratamento da exceção PropertyBindingException para customização da mensagem de erro de propriedade ignorada e inexistente
+
+### Aula 8.24 - Lançando exception de desserialização na atualização parcial (PATCH)
+Lançamento da exceção PropertyBindingException em caso de atualização parcial (método HTTP Patch).  
+Configuração do lançamento da exceção através do objectMapper.  
+Relançamento da exceção IllegalArgumentException como HttpMessageNotReadableException no método merge do controlador de restaurante.  
