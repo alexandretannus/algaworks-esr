@@ -454,4 +454,7 @@ Criação do método createProblemBuilder em ApiHandlerException.
 Refatoração do método handleEntidadeNaoEncontradaException para utilizar a RFC 7807
 
 ### Aula 8.19 - Desafio: usando o formato de problemas no corpo de respostas
-Refatoração dos métodos handleEntidadeEmUsoException e handleNegocioException de acordo com a RFC 7807. 
+Refatoração dos métodos handleEntidadeEmUsoException e handleNegocioException de acordo com a RFC 7807.
+
+### Aula 8.20 - Customizando exception handlers de ResponseEntityExceptionHandler
+Sobrescrita do método handleHttpMessageNotReadable para customização seguindo RFC
