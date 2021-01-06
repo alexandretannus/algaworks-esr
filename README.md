@@ -458,3 +458,7 @@ Refatoração dos métodos handleEntidadeEmUsoException e handleNegocioException
 
 ### Aula 8.20 - Customizando exception handlers de ResponseEntityExceptionHandler
 Sobrescrita do método handleHttpMessageNotReadable para customização seguindo RFC
+
+### Aula 8.21. Tratando a exception InvalidFormatException na desserialização
+Tratamento de tipo de dados inválido.  
+Adição no pom.xml da dependência Apache Commons Lang3 (commons-lang3)
