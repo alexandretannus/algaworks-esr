@@ -446,3 +446,9 @@ Código do método *tratarHttpMediaTypeNotSupportedException* comentado por conf
 ### Aula 8.16 - Customizando o corpo da resposta padrão de ResponseEntityExceptionHandler
 Sobrescrita da função handleExceptionInternal para customizar o corpo da respota.  
 Refatoração dos métodos de lançamento de exceção para utilizar o handleExceptionInternal.
+
+### Aula 8.18 - Padronizando o formato de problemas no corpo de respostas com a RFC 7807
+Corpo da resposta com parâmetros definidos pela RFC 7807 (status, type, title, detail).  
+Criação do enum ProblemType
+Criação do método createProblemBuilder em ApiHandlerException
+Refatoração do método handleEntidadeNaoEncontradaException para utilizar a RFC 7807
