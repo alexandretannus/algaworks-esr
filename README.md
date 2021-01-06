@@ -467,3 +467,7 @@ Adição no pom.xml da dependência Apache Commons Lang3 (commons-lang3)
 Alteração de application.properties para lançamento de erros na desserialização
 - Propriedade ignorada - spring.jackson.deserialization.fail-on-ignored-properties=true
 - Propriedade inexistente - spring.jackson.deserialization.fail-on-unknown-properties=true
+
+
+### Aula 8.23 - Desafio: tratando a PropertyBindingException na desserialização
+Tratamento da exceção PropertyBindingException para customização da mensagem de erro de propriedade ignorada e inexistente
