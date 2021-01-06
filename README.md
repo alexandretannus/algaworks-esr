@@ -438,3 +438,7 @@ Implementação de tratamento de exceção de tipo de mídia não suportado (Htt
 
 ### Aula 8.14 - Desafio: implementando exception handler
 Implementação de tratamento de exceção global para EntidadeEmUsoException.  
+
+### Aula 8.15. Criando um exception handler global com ResponseEntityExceptionHandler
+Herança de ResponseEntityExceptionHandler em ApiExceptionHandler.  
+Código do método *tratarHttpMediaTypeNotSupportedException* comentado por conflito 

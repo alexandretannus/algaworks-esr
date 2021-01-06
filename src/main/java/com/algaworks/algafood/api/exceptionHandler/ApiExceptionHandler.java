@@ -8,12 +8,12 @@ import com.algaworks.algafood.domain.exception.NegocioException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class ApiExceptionHandler {
+public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EntidadeNaoEncontradaException.class)
     public ResponseEntity<?> tratarEntidadeNaoEncontradaException(EntidadeNaoEncontradaException e) {
@@ -30,10 +30,11 @@ public class ApiExceptionHandler {
         return lancarExcecao(HttpStatus.CONFLICT, e.getMessage());
     }
 
-    @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
-    public ResponseEntity<?> tratarHttpMediaTypeNotSupportedException() {
-        return lancarExcecao(HttpStatus.UNSUPPORTED_MEDIA_TYPE, "Tipo de mídia não suportado");
-    }
+    // @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
+    // public ResponseEntity<?> tratarHttpMediaTypeNotSupportedException() {
+    // return lancarExcecao(HttpStatus.UNSUPPORTED_MEDIA_TYPE, "Tipo de mídia não
+    // suportado");
+    // }
 
     private ResponseEntity<?> lancarExcecao(HttpStatus status, String mensagem) {
         Problema problema = Problema.builder().dataHora(LocalDateTime.now()).mensagem(mensagem).build();
