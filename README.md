@@ -476,3 +476,8 @@ Tratamento da exceção PropertyBindingException para customização da mensagem
 Lançamento da exceção PropertyBindingException em caso de atualização parcial (método HTTP Patch).  
 Configuração do lançamento da exceção através do objectMapper.  
 Relançamento da exceção IllegalArgumentException como HttpMessageNotReadableException no método merge do controlador de restaurante.  
+
+
+### Aula 8.25 - Desafio: tratando exception de parâmetro de URL inválido
+Implementação da exceção de tipo de parâmetro inválido na URL. 
+Configuração personalizada da exceção MethodArgumentTypeMismatchException
