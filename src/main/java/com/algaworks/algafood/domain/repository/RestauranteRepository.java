@@ -29,4 +29,7 @@ public interface RestauranteRepository extends CustomJpaRepository<Restaurante, 
 
     List<Restaurante> consultarPorNome(String nome, Long id);
 
+    @Query("from Restaurante r left join fetch r.formasPagamento")
+    List<Restaurante> findByFormasPagamentoIdIn(List<Long> formasPagamentoId);
+
 }
