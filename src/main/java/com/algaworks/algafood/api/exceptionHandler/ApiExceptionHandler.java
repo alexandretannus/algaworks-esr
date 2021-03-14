@@ -89,9 +89,11 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
             HttpStatus status, WebRequest request) {
 
         if (body == null) {
-            body = Problem.builder().title(status.getReasonPhrase()).status(status.value()).build();
+            body = Problem.builder().title(status.getReasonPhrase()).status(status.value())
+                    .timestamp(LocalDateTime.now()).userMessage(MSG_ERRO_GENERICA).build();
         } else if (body instanceof String) {
-            body = Problem.builder().title((String) body).status(status.value()).build();
+            body = Problem.builder().title((String) body).status(status.value()).timestamp(LocalDateTime.now())
+                    .userMessage(MSG_ERRO_GENERICA).build();
         }
 
         return super.handleExceptionInternal(ex, body, headers, status, request);
