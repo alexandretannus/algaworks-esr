@@ -511,3 +511,7 @@ Extensão da classe *Problem* com a lista de campos não validados.
 ### Aula 9.5 - Conhecendo e adicionando mais constraints de validação no modelo
 Adição das constraints @NotEmpty e @NotBlank para o atributo *nome* e @DecimalMin e @PositiveOrZero para o atributo *taxaFrete*.  
 Observação: Algumas validações possuem anotações depreciadas do pacote *hibernate.validator*. Não utilizar estas validações.
+
+### Aula 9.6 - Validando as associações de uma entidade em cascata
+Validação para a passagem de cozinha com id nulo na entidade Restaurante.  
+Observação: Quebra o cadastro de cozinhas
