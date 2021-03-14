@@ -515,3 +515,7 @@ Observação: Algumas validações possuem anotações depreciadas do pacote *hi
 ### Aula 9.6 - Validando as associações de uma entidade em cascata
 Validação para a passagem de cozinha com id nulo na entidade Restaurante.  
 Observação: Quebra o cadastro de cozinhas
+
+### Aula 9.7 - Agrupando e restringindo constraints que devem ser usadas na validação
+Criação de grupos de validação para cada classe.  
+Alteração da anotação @Valid para @Validated no controlador para aceitar a configuração dos grupos.

@@ -21,6 +21,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
+import com.algaworks.algafood.Groups;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -41,12 +42,12 @@ public class Restaurante {
 
     // @NotNull
     // @NotEmpty
-    @NotBlank
+    @NotBlank(groups = Groups.CadastroRestaurante.class)
     @Column(nullable = false)
     private String nome;
 
     // @DecimalMin("0")
-    @PositiveOrZero
+    @PositiveOrZero(groups = Groups.CadastroRestaurante.class)
     @Column(name = "taxa_frete", nullable = false)
     private BigDecimal taxaFrete;
 
@@ -61,7 +62,7 @@ public class Restaurante {
     private LocalDateTime dataAtualizacao;
 
     @Valid
-    @NotNull
+    @NotNull(groups = Groups.CadastroRestaurante.class)
     @ManyToOne
     @JoinColumn(name = "cozinha_id", nullable = false)
     private Cozinha cozinha;
