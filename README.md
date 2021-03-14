@@ -499,5 +499,8 @@ Criação de mensagem genérica de erro para o usuário.
 Adição da dependência *spring-boot-starter-validation*. Essa adição deve ser feita em qualquer projeto Spring a partir da versão 2.3.0
 
 ### Aula 9.2 - Adicionando constraints e validando no controller com @Valid
-Adição de validação *NotNull* no atributo *nome* da classe *Restaurante*
-Configuração do controlador com anotação @Valid
+Adição de validação *NotNull* no atributo *nome* da classe *Restaurante*.  
+Configuração do controlador com anotação @Valid.
+
+### Aula 9.3 - Desafio: tratando exception de violação de constraints de validação
+Customização da exceção *handleMethodArgumentNotValid*

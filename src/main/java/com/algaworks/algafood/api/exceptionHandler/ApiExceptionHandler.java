@@ -17,6 +17,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
@@ -139,6 +140,17 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         String detail = String.format("A propriedade '%s' é inválida.", path);
         ProblemType problemType = ProblemType.MENSAGEM_INCOMPREENSIVEL;
         Problem problem = createProblemBuilder(status, problemType, detail, MSG_ERRO_GENERICA).build();
+
+        return handleExceptionInternal(ex, problem, headers, status, request);
+    }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+            HttpHeaders headers, HttpStatus status, WebRequest request) {
+        String detail = String
+                .format("Um ou mais campos estão inválidos. Faça o preenchimento correto e tente novamente");
+        ProblemType problemType = ProblemType.DADOS_INVALIDOS;
+        Problem problem = createProblemBuilder(status, problemType, detail, detail).build();
 
         return handleExceptionInternal(ex, problem, headers, status, request);
     }
