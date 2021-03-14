@@ -481,3 +481,15 @@ Relançamento da exceção IllegalArgumentException como HttpMessageNotReadableE
 ### Aula 8.25 - Desafio: tratando exception de parâmetro de URL inválido
 Implementação da exceção de tipo de parâmetro inválido na URL. 
 Configuração personalizada da exceção MethodArgumentTypeMismatchException
+
+### Aula 8.26 - Desafio: tratando a exceção NoHandlerFoundException
+Configuração personalizada da exceção NoHandlerFoundException
+
+### Aula 8.27 - Desafio: tratando outras exceções não capturadas
+Configuração personalizada das mensagens de exceção para situações não previstas em outros métodos
+
+### Aula 8.29 - Desafio: estendendo o formato do problema
+Adição dos atributos *userMessage*e *timestamp* na classe *Problem*.  
+Refatoração do método *createProblemBuilder* e dos métodos de lançamento de exceções para tratar os novos atributos criados.  
+Criação de mensagem genérica de erro para o usuário.
+
