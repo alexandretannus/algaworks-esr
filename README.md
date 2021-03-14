@@ -504,3 +504,6 @@ Configuração do controlador com anotação @Valid.
 
 ### Aula 9.3 - Desafio: tratando exception de violação de constraints de validação
 Customização da exceção *handleMethodArgumentNotValid*
+
+### Aula 9.4 - Estendendo o Problem Details para adicionar as propriedades com constraints violadas
+Extensão da classe *Problem* com a lista de campos não validados.
