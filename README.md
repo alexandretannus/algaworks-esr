@@ -493,3 +493,7 @@ Adição dos atributos *userMessage*e *timestamp* na classe *Problem*.
 Refatoração do método *createProblemBuilder* e dos métodos de lançamento de exceções para tratar os novos atributos criados.  
 Criação de mensagem genérica de erro para o usuário.
 
+## Módulo 9
+
+### Aula 9.1 - Validação do modelo com Bean Validation
+Adição da dependência *spring-boot-starter-validation*. Essa adição deve ser feita em qualquer projeto Spring a partir da versão 2.3.0
