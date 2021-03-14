@@ -507,3 +507,7 @@ Customização da exceção *handleMethodArgumentNotValid*
 
 ### Aula 9.4 - Estendendo o Problem Details para adicionar as propriedades com constraints violadas
 Extensão da classe *Problem* com a lista de campos não validados.
+
+### Aula 9.5 - Conhecendo e adicionando mais constraints de validação no modelo
+Adição das constraints @NotEmpty e @NotBlank para o atributo *nome* e @DecimalMin e @PositiveOrZero para o atributo *taxaFrete*.  
+Observação: Algumas validações possuem anotações depreciadas do pacote *hibernate.validator*. Não utilizar estas validações.
