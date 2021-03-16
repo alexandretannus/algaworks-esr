@@ -42,13 +42,10 @@ public class Restaurante {
     @EqualsAndHashCode.Include
     private Long id;
 
-    // @NotNull
-    // @NotEmpty
-    @NotBlank
+    @NotBlank(message = "Nome é obrigatório")
     @Column(nullable = false)
     private String nome;
 
-    // @DecimalMin("0")
     @PositiveOrZero
     @Column(name = "taxa_frete", nullable = false)
     private BigDecimal taxaFrete;

@@ -522,3 +522,9 @@ Alteração da anotação @Valid para @Validated no controlador para aceitar a c
 
 ### Aula 9.8 - Convertendo grupos de constraints para validação em cascata com @ConvertGroup
 Uso da anotação @ConvertGroup para simplificar a validação em cascata 
+
+### Aula 9.9 - Desafio: adicionando constraints de validação no modelo
+Validação nos modelos de Cidade e Estado e controladores de Cidade, Estado e Cozinha (métodos atualizar e adicionar)
+
+### Aula 9.10 - Customizando mensagens de validação na anotação da constraint
+Alteração da mensagem de validação através do parâmetro message da anotação
