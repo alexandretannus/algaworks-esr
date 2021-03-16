@@ -519,3 +519,6 @@ Observação: Quebra o cadastro de cozinhas
 ### Aula 9.7 - Agrupando e restringindo constraints que devem ser usadas na validação
 Criação de grupos de validação para cada classe.  
 Alteração da anotação @Valid para @Validated no controlador para aceitar a configuração dos grupos.
+
+### Aula 9.8 - Convertendo grupos de constraints para validação em cascata com @ConvertGroup
+Uso da anotação @ConvertGroup para simplificar a validação em cascata 
