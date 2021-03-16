@@ -2,6 +2,8 @@ package com.algaworks.algafood.api.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.algaworks.algafood.domain.model.Estado;
 import com.algaworks.algafood.domain.repository.EstadoRepository;
 import com.algaworks.algafood.domain.service.CadastroEstadoService;
@@ -42,13 +44,13 @@ public class EstadoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Estado adicionar(@RequestBody Estado estado) {
+    public Estado adicionar(@RequestBody @Valid Estado estado) {
         return service.salvar(estado);
     }
 
     @PutMapping("{estadoId}")
     @ResponseStatus(HttpStatus.OK)
-    public Estado atualizar(@PathVariable Long estadoId, @RequestBody Estado estado) {
+    public Estado atualizar(@PathVariable Long estadoId, @RequestBody @Valid Estado estado) {
         Estado estadoAtual = service.buscarOuFalhar(estadoId);
 
         BeanUtils.copyProperties(estado, estadoAtual, "id");
