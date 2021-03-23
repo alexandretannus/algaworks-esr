@@ -592,3 +592,7 @@ Configuração do log de erros, porta e caminho padrão no método *setup*
 
 ### Aula 10.12 - Voltando o estado inicial do banco de dados para cada execução de teste com callback do Flyway
 Configuração do Flyway para executar a migração de dados antes de cada teste.
+
+### Aula 10.13 - Configurando um banco de testes e usando @TestPropertySource
+Criação do arquivo application-test.properties com configuração do banco de dados de teste.  
+Utilização da anotação @TestPropertySource para utilização dos parâmetros de configuração de testes.
