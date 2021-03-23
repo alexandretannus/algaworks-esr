@@ -565,3 +565,8 @@ Criação de exceção ValidacaoException.
 
 ### Aula 9.20 - Desafio: tratando a exception customizada de validações programáticas
 Configuração do lançamento de ValidacaoException através da classe ApiExceptionHandler
+
+## Módulo 10
+
+### Aula 10.3 - Criando e rodando um teste de integração com Spring Boot, JUnit e AssertJ
+Testes de integração para verificar cadastro de cozinha com sucesso e com problemas de validação relativos ao nome da cozinha.
