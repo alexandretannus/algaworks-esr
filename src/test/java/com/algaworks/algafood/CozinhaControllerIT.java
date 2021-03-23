@@ -4,8 +4,10 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.boot.devtools.autoconfigure.DevToolsProperties.Restart;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
@@ -21,13 +23,17 @@ public class CozinhaControllerIT {
     @LocalServerPort
     private int port;
 
-    @Test
-    public void deveRetornarStatus200_QuandoConsultarCozinhas() {
+    @Before
+    public void setup() {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 
+        RestAssured.port = port;
+        RestAssured.basePath = "/cozinhas";
+    }
+
+    @Test
+    public void deveRetornarStatus200_QuandoConsultarCozinhas() {
         given()
-            .basePath("/cozinhas")
-            .port(port)
             .accept(ContentType.JSON)
         .when()
             .get()
@@ -36,12 +42,8 @@ public class CozinhaControllerIT {
     }
 
     @Test
-    public void deveConterQuatroCozinhas_QuandoConsultarCozinhas() {
-        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
-        
+    public void deveConterQuatroCozinhas_QuandoConsultarCozinhas() {        
         given()
-            .basePath("/cozinhas")
-            .port(port)
             .accept(ContentType.JSON)
         .when()
             .get()

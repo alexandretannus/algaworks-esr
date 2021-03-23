@@ -582,3 +582,10 @@ Renomeação da classe CadastroCozinhaIntegrationTests para CadastroCozinhaIT (p
 Implementação de testes de API.  
 COnfiguração do teste para subir um servidor em uma porta específica. 
 Log de erros com método *enableLoggingOfRequestAndResponseIfValidationFails*
+
+### Aula 10.9 - Validando o corpo da resposta HTTP
+Validação do corpo da resposta com *.body* e utilização dos métodos *hasItems* e *hasSize* da biblioteca Hamcrest
+
+### Aula 10.10 - Criando um método para fazer setup dos testes
+Criação de método que executa antes de todos os testes com anotação @Before.  
+Configuração do log de erros, porta e caminho padrão no método *setup*
