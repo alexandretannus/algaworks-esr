@@ -558,3 +558,8 @@ Implementação de validação para a classe com verificação de atributos espe
 ### Aula 9.18 - Ajustando Exception Handler para adicionar mensagens de validação em nível de classe
 Correção do problema de não mostrar os campos de validação na mensagem de validação (campo *fields*).  
 Customização da mensagem de erro de ValorZeroIncluiDescricao.  
+
+### Aula 9.19 - Executando processo de validação programaticamente
+Validação programática para a atualização parcial de restaurante.  
+Criação de exceção ValidacaoException.  
+
