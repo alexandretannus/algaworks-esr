@@ -534,5 +534,10 @@ Criação do arquivo message.properties para configuração de mensagens de erro
 Configuração da exceção para buscar no arquivo message.properties utilizando uma isntância da classe MessageSource
 
 ### Aula 9.12 - Desafio: customizando mensagens de validação
-Customização das mensagens de validação das classes Cozinha, Restaurante, Estado e Cidade
-Adição da constraint NotNull em taxaFrete
+Customização das mensagens de validação das classes Cozinha, Restaurante, Estado e Cidade.  
+Adição da constraint NotNull em taxaFrete.
+
+### Aula 9.13 - Resolvendo mensagens de validação com Resource Bundle do Bean Validation
+Customização das mensagens do *Bean Validation* através do arquivo ValidationMessages.properties.  
+*Resource Bundle* do Spring (message.properties) tem precedência sobre o do *Bean Validation* (ValidationMessages.properties).  
+Possível criar propriedade customizada no ValidationMessages e utilizar na propriedade *message* da anotação
