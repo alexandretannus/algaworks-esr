@@ -599,3 +599,13 @@ Utilização da anotação @TestPropertySource para utilização dos parâmetros
 
 ### Aula 10.14 - Limpando e populando o banco de dados de teste
 Criação da classe utilitária DatabaseCleaner.  
+
+### Aula 10.15 - Testando enpoint passando parâmetro de URL
+Teste de busca por id de cozinha.  
+Uso do método *pathParams* para configuração dos parâmetros
+
+### Aula 10.16 - Desafio: refatorando o código de testes
+Refatoração do códiogo para maior legibilidade e facilidade de manutenção.  
+Carregamento de arquivo JSON externo com o método *getContentFromResource* da classe ResourceUtils, criada especificamente para esse fim.  
+Utilização de contador automático para número de cozinhas a partir do repositório.
+
