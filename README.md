@@ -532,3 +532,7 @@ Alteração da mensagem de validação através do parâmetro message da anotaç
 ### Aula 9.11 - Customizando e resolvendo mensagens de validação globais em Resource Bundle
 Criação do arquivo message.properties para configuração de mensagens de erro globais.  
 Configuração da exceção para buscar no arquivo message.properties utilizando uma isntância da classe MessageSource
+
+### Aula 9.12 - Desafio: customizando mensagens de validação
+Customização das mensagens de validação das classes Cozinha, Restaurante, Estado e Cidade
+Adição da constraint NotNull em taxaFrete
