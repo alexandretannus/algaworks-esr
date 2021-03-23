@@ -542,6 +542,9 @@ Customização das mensagens do *Bean Validation* através do arquivo Validation
 *Resource Bundle* do Spring (message.properties) tem precedência sobre o do *Bean Validation* (ValidationMessages.properties).  
 Possível criar propriedade customizada no ValidationMessages e utilizar na propriedade *message* da anotação
 
-### Aula 9.14. Usando o Resource Bundle do Spring como Resource Bundle do Bean Validation
-Criação de classe de configuração de validação (ValidationConfig.java).
+### Aula 9.14 - Usando o Resource Bundle do Spring como Resource Bundle do Bean Validation
+Criação de classe de configuração de validação (ValidationConfig.java).  
 Mudança da configuração de grupos de validação para o pacote core.validation e refatoração nas classes necessárias
+
+### Aula 9.15 - Criando constraints de validação customizadas usando composição
+Criação de anotação customizada para validação. 
