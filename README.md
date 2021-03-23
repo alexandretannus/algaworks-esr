@@ -528,3 +528,7 @@ Validação nos modelos de Cidade e Estado e controladores de Cidade, Estado e C
 
 ### Aula 9.10 - Customizando mensagens de validação na anotação da constraint
 Alteração da mensagem de validação através do parâmetro message da anotação
+
+### Aula 9.11 - Customizando e resolvendo mensagens de validação globais em Resource Bundle
+Criação do arquivo message.properties para configuração de mensagens de erro globais.  
+Configuração da exceção para buscar no arquivo message.properties utilizando uma isntância da classe MessageSource
