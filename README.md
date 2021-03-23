@@ -554,3 +554,7 @@ Implementação de anotação com regra de negócio específica
 
 ### Aula 9.17 - Criando constraints de validação customizadas em nível de classe
 Implementação de validação para a classe com verificação de atributos específicos.
+
+### Aula 9.18 - Ajustando Exception Handler para adicionar mensagens de validação em nível de classe
+Correção do problema de não mostrar os campos de validação na mensagem de validação (campo *fields*).  
+Customização da mensagem de erro de ValorZeroIncluiDescricao.  
