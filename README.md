@@ -589,3 +589,6 @@ Validação do corpo da resposta com *.body* e utilização dos métodos *hasIte
 ### Aula 10.10 - Criando um método para fazer setup dos testes
 Criação de método que executa antes de todos os testes com anotação @Before.  
 Configuração do log de erros, porta e caminho padrão no método *setup*
+
+### Aula 10.12 - Voltando o estado inicial do banco de dados para cada execução de teste com callback do Flyway
+Configuração do Flyway para executar a migração de dados antes de cada teste.

@@ -4,10 +4,11 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 
+import org.flywaydb.core.Flyway;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.devtools.autoconfigure.DevToolsProperties.Restart;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
@@ -23,12 +24,17 @@ public class CozinhaControllerIT {
     @LocalServerPort
     private int port;
 
+    @Autowired
+    private Flyway flyway;
+
     @Before
     public void setup() {
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 
         RestAssured.port = port;
         RestAssured.basePath = "/cozinhas";
+
+        flyway.migrate();
     }
 
     @Test
