@@ -1,0 +1,7 @@
+{
+    "nome": "Grande Muralha",
+    "taxaFrete": 3,
+    "cozinha": {
+        "id": 1
+    }
+}
