@@ -23,6 +23,7 @@ import javax.validation.groups.ConvertGroup;
 import javax.validation.groups.Default;
 
 import com.algaworks.algafood.core.validation.Groups;
+import com.algaworks.algafood.core.validation.Multiplo;
 import com.algaworks.algafood.core.validation.TaxaFrete;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -49,6 +50,7 @@ public class Restaurante {
     @NotNull
     //@PositiveOrZero
     @TaxaFrete
+    @Multiplo(numero = 3)
     @Column(name = "taxa_frete", nullable = false)
     private BigDecimal taxaFrete;
 

@@ -548,3 +548,6 @@ Mudança da configuração de grupos de validação para o pacote core.validatio
 
 ### Aula 9.15 - Criando constraints de validação customizadas usando composição
 Criação de anotação customizada para validação. 
+
+### Aula 9.16 - Criando constraints de validação customizadas com implementação de ConstraintValidator
+Implementação de anotação com regra de negócio específica
