@@ -570,3 +570,10 @@ Configuração do lançamento de ValidacaoException através da classe ApiExcept
 
 ### Aula 10.3 - Criando e rodando um teste de integração com Spring Boot, JUnit e AssertJ
 Testes de integração para verificar cadastro de cozinha com sucesso e com problemas de validação relativos ao nome da cozinha.
+
+### Aula 10.5 - Desafio: escrevendo testes de integração
+Testes de integração para exclusão de cozinhas
+
+### Aula 10.7 - Configurando Maven Failsafe Plugin no projeto
+Adição do plugin Maven Failsafe para agilizar o processo de build.  
+Renomeação da classe CadastroCozinhaIntegrationTests para CadastroCozinhaIT (padrão do Maven Failsafe).   
