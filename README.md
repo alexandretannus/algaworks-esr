@@ -596,3 +596,6 @@ Configuração do Flyway para executar a migração de dados antes de cada teste
 ### Aula 10.13 - Configurando um banco de testes e usando @TestPropertySource
 Criação do arquivo application-test.properties com configuração do banco de dados de teste.  
 Utilização da anotação @TestPropertySource para utilização dos parâmetros de configuração de testes.
+
+### Aula 10.14 - Limpando e populando o banco de dados de teste
+Criação da classe utilitária DatabaseCleaner.  

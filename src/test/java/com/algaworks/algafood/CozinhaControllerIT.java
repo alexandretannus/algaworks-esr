@@ -4,7 +4,10 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 
-import org.flywaydb.core.Flyway;
+import com.algaworks.algafood.domain.model.Cozinha;
+import com.algaworks.algafood.domain.repository.CozinhaRepository;
+import com.algaworks.algafood.util.DatabaseCleaner;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +30,10 @@ public class CozinhaControllerIT {
     private int port;
 
     @Autowired
-    private Flyway flyway;
+    private DatabaseCleaner cleaner;
+
+    @Autowired
+    private CozinhaRepository repository;
 
     @Before
     public void setup() {
@@ -36,7 +42,8 @@ public class CozinhaControllerIT {
         RestAssured.port = port;
         RestAssured.basePath = "/cozinhas";
 
-        flyway.migrate();
+        cleaner.clearTables();
+        prepararDados();
     }
 
     @Test
@@ -50,13 +57,13 @@ public class CozinhaControllerIT {
     }
 
     @Test
-    public void deveConterQuatroCozinhas_QuandoConsultarCozinhas() {        
+    public void deveConterDuasCozinhas_QuandoConsultarCozinhas() {        
         given()
             .accept(ContentType.JSON)
         .when()
             .get()
         .then()
-            .body("", hasSize(4))
+            .body("", hasSize(2))
             .body("nome", hasItems("Indiana", "Tailandesa"));
     }
 
@@ -70,5 +77,15 @@ public class CozinhaControllerIT {
             .post()
         .then()
             .statusCode(HttpStatus.CREATED.value());
+    }
+
+    private void prepararDados() {
+        Cozinha cozinha1 = new Cozinha();
+        cozinha1.setNome("Tailandesa");
+        repository.save(cozinha1);
+        
+        Cozinha cozinha2 = new Cozinha();
+        cozinha2.setNome("Indiana");
+        repository.save(cozinha2);
     }
 }
