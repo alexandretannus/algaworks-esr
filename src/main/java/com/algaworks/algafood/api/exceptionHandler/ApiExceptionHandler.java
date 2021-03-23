@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.algaworks.algafood.core.validation.ValidacaoException;
 import com.algaworks.algafood.domain.exception.EntidadeEmUsoException;
 import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
 import com.algaworks.algafood.domain.exception.NegocioException;
@@ -20,6 +21,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -163,28 +165,39 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
             HttpHeaders headers, HttpStatus status, WebRequest request) {
 
+        return handleValidationInternal(ex, ex.getBindingResult(), headers, status, request);
+    }
+
+    @ExceptionHandler({ ValidacaoException.class })
+    public ResponseEntity<Object> handleValidacaoException(ValidacaoException ex, WebRequest request) {
+        return handleValidationInternal(ex, ex.getBindingResult(), new HttpHeaders(), 
+                HttpStatus.BAD_REQUEST, request);
+    }        
+
+    private ResponseEntity<Object> handleValidationInternal(Exception ex, BindingResult bindingResult, HttpHeaders headers, HttpStatus status, 
+            WebRequest request) {
         String detail = String.format("Um ou mais campos estão inválidos." +
                                         " Faça o preenchimento correto e tente novamente");
         ProblemType problemType = ProblemType.DADOS_INVALIDOS;
 
-        List<Problem.Object> objects = ex.getBindingResult()
-                                            .getAllErrors()
-                                            .stream()
-                                            .map(objectError -> {
-                                                String message = messageSource
-                                                                    .getMessage(objectError, 
-                                                                                LocaleContextHolder.getLocale());
+        List<Problem.Object> objects = bindingResult
+                                        .getAllErrors()
+                                        .stream()
+                                        .map(objectError -> {
+                                            String message = messageSource
+                                                                .getMessage(objectError, 
+                                                                            LocaleContextHolder.getLocale());
 
-                                                String name = objectError instanceof FieldError ?
-                                                                ((FieldError) objectError).getField() :
-                                                                objectError.getObjectName();
+                                            String name = objectError instanceof FieldError ?
+                                                            ((FieldError) objectError).getField() :
+                                                            objectError.getObjectName();
 
-                                                return Problem.Object.builder()
-                                                        .name(name)
-                                                        .userMessage(message)
-                                                        .build();
-                                            })
-                                            .collect(Collectors.toList());
+                                            return Problem.Object.builder()
+                                                    .name(name)
+                                                    .userMessage(message)
+                                                    .build();
+                                        })
+                                        .collect(Collectors.toList());
 
         Problem problem = createProblemBuilder(status, problemType, detail, false)
                             .objects(objects)

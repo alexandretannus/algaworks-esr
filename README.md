@@ -563,3 +563,5 @@ Customização da mensagem de erro de ValorZeroIncluiDescricao.
 Validação programática para a atualização parcial de restaurante.  
 Criação de exceção ValidacaoException.  
 
+### Aula 9.20 - Desafio: tratando a exception customizada de validações programáticas
+Configuração do lançamento de ValidacaoException através da classe ApiExceptionHandler
