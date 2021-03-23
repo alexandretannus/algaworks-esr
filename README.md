@@ -577,3 +577,8 @@ Testes de integração para exclusão de cozinhas
 ### Aula 10.7 - Configurando Maven Failsafe Plugin no projeto
 Adição do plugin Maven Failsafe para agilizar o processo de build.  
 Renomeação da classe CadastroCozinhaIntegrationTests para CadastroCozinhaIT (padrão do Maven Failsafe).   
+
+### Aula 10.8 - Implementando Testes de API com REST Assured e validando o código de status HTTP
+Implementação de testes de API.  
+COnfiguração do teste para subir um servidor em uma porta específica. 
+Log de erros com método *enableLoggingOfRequestAndResponseIfValidationFails*
