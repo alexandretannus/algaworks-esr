@@ -551,3 +551,6 @@ Criação de anotação customizada para validação.
 
 ### Aula 9.16 - Criando constraints de validação customizadas com implementação de ConstraintValidator
 Implementação de anotação com regra de negócio específica
+
+### Aula 9.17 - Criando constraints de validação customizadas em nível de classe
+Implementação de validação para a classe com verificação de atributos específicos.
