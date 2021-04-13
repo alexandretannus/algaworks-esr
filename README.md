@@ -609,3 +609,7 @@ Refatoração do códiogo para maior legibilidade e facilidade de manutenção.
 Carregamento de arquivo JSON externo com o método *getContentFromResource* da classe ResourceUtils, criada especificamente para esse fim.  
 Utilização de contador automático para número de cozinhas a partir do repositório.
 
+## Módulo 11
+
+### Aula 11.2 - Refinando o payload de cadastro com @JsonIgnoreProperties
+Utilização do JsonIgnoreProperties para ignorar propriedade. O parâmetro allowGetters permite que seja ignorado apenas na serialização
