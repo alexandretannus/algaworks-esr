@@ -53,7 +53,7 @@ public class RestauranteController {
         }
     }
 
-    @PutMapping("/{restauranteId}")
+    @PutMapping("{restauranteId}")
     @ResponseStatus(HttpStatus.OK)
     public Restaurante atualizar(@PathVariable Long restauranteId, @RequestBody @Valid Restaurante restaurante) {
 
@@ -63,7 +63,7 @@ public class RestauranteController {
                 "produtos");
 
         try {
-            return service.salvar(restaurante);
+            return service.salvar(restauranteAtual);
         } catch (CozinhaNaoEncontradaException e) {
             throw new NegocioException(e.getMessage());
         }
