@@ -613,3 +613,7 @@ Utilização de contador automático para número de cozinhas a partir do reposi
 
 ### Aula 11.2 - Refinando o payload de cadastro com @JsonIgnoreProperties
 Utilização do JsonIgnoreProperties para ignorar propriedade. O parâmetro allowGetters permite que seja ignorado apenas na serialização
+
+### Aula 11.3 - Criando classes de mixin para usar as anotações do Jackson
+Criação da classe mixin de restaurante para configurar as anotações do Jackson.  
+Classe de configuração de mixin (JacksonMixinModule) no pacote core.jackson
