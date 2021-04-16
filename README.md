@@ -626,3 +626,5 @@ Alteração no modelo de Cidade para rejeitar requisições PUT e POST com o nom
 Alteração do tipo de datas de LocalDateTime para OffsetDateTime para acrescentar o offset de timezone.  
 Configuração da aplicação para utilizar o timezone UTC (independente do sistema operacional)
 
+### Aula 11.8 - Desafio: refatorando o código para usar OffsetDateTime
+Refatoração das classes Usuario, Pedido, Problem e ApiExceptionHandler para utilização de OffsetDateTime
