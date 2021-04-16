@@ -617,3 +617,7 @@ Utilização do JsonIgnoreProperties para ignorar propriedade. O parâmetro allo
 ### Aula 11.3 - Criando classes de mixin para usar as anotações do Jackson
 Criação da classe mixin de restaurante para configurar as anotações do Jackson.  
 Classe de configuração de mixin (JacksonMixinModule) no pacote core.jackson
+
+### Aula 11.4 - Desafio: usando @JsonIgnoreProperties e Jackson Mixin
+Criação dos Mixin de Cidade e Cozinha.  
+Alteração no modelo de Cidade para rejeitar requisições PUT e POST com o nome do estado (com @JsonIgnoreProperties)
