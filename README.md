@@ -621,3 +621,8 @@ Classe de configuração de mixin (JacksonMixinModule) no pacote core.jackson
 ### Aula 11.4 - Desafio: usando @JsonIgnoreProperties e Jackson Mixin
 Criação dos Mixin de Cidade e Cozinha.  
 Alteração no modelo de Cidade para rejeitar requisições PUT e POST com o nome do estado (com @JsonIgnoreProperties)
+
+### Aula 11.7 - Configurando e refatorando o projeto para usar UTC
+Alteração do tipo de datas de LocalDateTime para OffsetDateTime para acrescentar o offset de timezone.  
+Configuração da aplicação para utilizar o timezone UTC (independente do sistema operacional)
+
