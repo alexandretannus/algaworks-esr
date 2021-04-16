@@ -628,3 +628,7 @@ Configuração da aplicação para utilizar o timezone UTC (independente do sist
 
 ### Aula 11.8 - Desafio: refatorando o código para usar OffsetDateTime
 Refatoração das classes Usuario, Pedido, Problem e ApiExceptionHandler para utilização de OffsetDateTime
+
+### Aula 11.9 - Isolando o Domain Model do Representation Model com o padrão DTO
+Criação de DTOs para as classes Cozinha e Restaurante.  
+Alteração do método listar do RestauranteController para retornar RestauranteModel. 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.algaworks.algafood.api.model.RestauranteModel;
 import com.algaworks.algafood.domain.exception.CozinhaNaoEncontradaException;
 import com.algaworks.algafood.domain.exception.NegocioException;
 import com.algaworks.algafood.domain.model.Restaurante;
@@ -39,8 +40,9 @@ public class RestauranteController {
 
     @GetMapping("{restauranteId}")
     @ResponseStatus(HttpStatus.OK)
-    public Restaurante buscar(@PathVariable("restauranteId") Long restauranteId) {
-        return service.buscarOuFalhar(restauranteId);
+    public RestauranteModel buscar(@PathVariable("restauranteId") Long restauranteId) {
+        return null;
+        //return service.buscarOuFalhar(restauranteId);
     }
 
     @PostMapping
