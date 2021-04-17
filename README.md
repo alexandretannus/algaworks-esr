@@ -632,3 +632,7 @@ Refatoração das classes Usuario, Pedido, Problem e ApiExceptionHandler para ut
 ### Aula 11.9 - Isolando o Domain Model do Representation Model com o padrão DTO
 Criação de DTOs para as classes Cozinha e Restaurante.  
 Alteração do método listar do RestauranteController para retornar RestauranteModel. 
+
+### Aula 11.10 - Implementando a conversão de entidade para DTO
+Implementação dos métodos toModel e toCollectionModel no RestauranteController.  
+Refatoração dos métodos de RestauranteController para utilização do DTO.  

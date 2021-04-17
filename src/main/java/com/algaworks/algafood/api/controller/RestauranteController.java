@@ -1,9 +1,11 @@
 package com.algaworks.algafood.api.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
+import com.algaworks.algafood.api.model.CozinhaModel;
 import com.algaworks.algafood.api.model.RestauranteModel;
 import com.algaworks.algafood.domain.exception.CozinhaNaoEncontradaException;
 import com.algaworks.algafood.domain.exception.NegocioException;
@@ -34,22 +36,25 @@ public class RestauranteController {
     private CadastroRestauranteService service;
 
     @GetMapping
-    public List<Restaurante> listar() {
-        return restauranteRepository.findAll();
+    public List<RestauranteModel> listar() {
+        return toCollectionModel(restauranteRepository.findAll());
     }
 
     @GetMapping("{restauranteId}")
     @ResponseStatus(HttpStatus.OK)
     public RestauranteModel buscar(@PathVariable("restauranteId") Long restauranteId) {
-        return null;
-        //return service.buscarOuFalhar(restauranteId);
+        Restaurante restaurante = service.buscarOuFalhar(restauranteId);
+
+        RestauranteModel restauranteModel = toModel(restaurante);
+
+        return restauranteModel;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Restaurante adicionar(@RequestBody @Valid Restaurante restaurante) {
+    public RestauranteModel adicionar(@RequestBody @Valid Restaurante restaurante) {
         try {
-            return service.salvar(restaurante);
+            return toModel(service.salvar(restaurante));
         } catch (CozinhaNaoEncontradaException e) {
             throw new NegocioException(e.getMessage());
         }
@@ -57,7 +62,7 @@ public class RestauranteController {
 
     @PutMapping("{restauranteId}")
     @ResponseStatus(HttpStatus.OK)
-    public Restaurante atualizar(@PathVariable Long restauranteId, @RequestBody @Valid Restaurante restaurante) {
+    public RestauranteModel atualizar(@PathVariable Long restauranteId, @RequestBody @Valid Restaurante restaurante) {
 
         Restaurante restauranteAtual = service.buscarOuFalhar(restauranteId);
 
@@ -65,11 +70,30 @@ public class RestauranteController {
                 "produtos");
 
         try {
-            return service.salvar(restauranteAtual);
+            return toModel(service.salvar(restauranteAtual));
         } catch (CozinhaNaoEncontradaException e) {
             throw new NegocioException(e.getMessage());
         }
 
     }
 
+    private RestauranteModel toModel(Restaurante restaurante) {
+        CozinhaModel cozinhaModel = new CozinhaModel();
+        cozinhaModel.setId(restaurante.getCozinha().getId());
+        cozinhaModel.setNome(restaurante.getCozinha().getNome());
+
+        RestauranteModel restauranteModel = new RestauranteModel();
+        restauranteModel.setId(restaurante.getId());
+        restauranteModel.setNome(restaurante.getNome());
+        restauranteModel.setTaxaFrete(restaurante.getTaxaFrete());
+        restauranteModel.setCozinha(cozinhaModel);
+
+        return restauranteModel;
+    }
+
+    private List<RestauranteModel> toCollectionModel(List<Restaurante> restaurantes) {
+        return restaurantes.stream()
+                    .map(restaurante -> toModel(restaurante) )
+                    .collect(Collectors.toList());
+    }
 }
