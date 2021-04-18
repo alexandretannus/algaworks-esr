@@ -658,3 +658,6 @@ Customização da propriedade taxaFrete na representação através de mapeament
 
 ### Aula 11.17 -  Mapeando para uma instância destino (e não um tipo) com ModelMapper
 Criação do método *copyToDomainObject* na classe RestauranteInputDisassembler para cópia de propriedades (necessário na atualização)
+
+### Aula 11.18 - Revisando e ajustando as mensagens de validação com o uso de DTOs
+Mensagens de validação sem customização com DTOs. Ajuste do arquivo message.properties para reconhecimento do DTO
