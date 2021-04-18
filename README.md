@@ -640,3 +640,6 @@ Refatoração dos métodos de RestauranteController para utilização do DTO.
 ### Aula 11.11 - Criando DTOs para entrada de dados na API
 Criação de DTOs para entradas de restaurantes e id de cozinha.  
 Alteração no controller de restaurante para utilização do DTO de entrada de dados.
+
+### Aula 11.12 - Refatorando e criando um assembler de DTO
+Exclusão do mixin de restaurante.  
