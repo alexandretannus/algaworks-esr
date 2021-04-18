@@ -661,3 +661,6 @@ Criação do método *copyToDomainObject* na classe RestauranteInputDisassembler
 
 ### Aula 11.18 - Revisando e ajustando as mensagens de validação com o uso de DTOs
 Mensagens de validação sem customização com DTOs. Ajuste do arquivo message.properties para reconhecimento do DTO
+
+### Aula 11.20 - Desafio: usando DTOs como representation model
+Criação de DTOs, assemblers e disassemblers para cidade, estado e cozinha
