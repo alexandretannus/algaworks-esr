@@ -652,3 +652,6 @@ Refatoração do controller de restaurante.
 Adição da dependência do modelmapper no pom.xml  
 Criação de classe de configuração do ModelMapper (ModelMapperConfig.java).  
 Utilização do ModelMapper no assembler e disassembler de restaurantes.
+
+### Aula 11.16 - Customizando o mapeamento de propriedades com ModelMapper
+Customização da propriedade taxaFrete na representação através de mapeamento na classe de configuração do ModelMapper.
