@@ -16,6 +16,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<modelmapper.version>2.3.0</modelmapper.version>
 	</properties>
 
 	<dependencies>
@@ -58,6 +59,12 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>${modelmapper.version}</version>
 		</dependency>
 
 		<!-- Banco de dados e persistência -->

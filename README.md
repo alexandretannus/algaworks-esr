@@ -647,3 +647,8 @@ Exclusão do mixin de restaurante.
 ### Aula 11.13 - Desafio: Refatorando e criando um disassembler do DTO
 Criação da classe RestauranteInputDisassembler e transferência do método *toDomainObject* para esta classe.  
 Refatoração do controller de restaurante.
+
+### Aula 11.14 - Adicionando e usando o ModelMapper
+Adição da dependência do modelmapper no pom.xml  
+Criação de classe de configuração do ModelMapper (ModelMapperConfig.java).  
+Utilização do ModelMapper no assembler e disassembler de restaurantes.
