@@ -636,3 +636,7 @@ Alteração do método listar do RestauranteController para retornar Restaurante
 ### Aula 11.10 - Implementando a conversão de entidade para DTO
 Implementação dos métodos toModel e toCollectionModel no RestauranteController.  
 Refatoração dos métodos de RestauranteController para utilização do DTO.  
+
+### Aula 11.11 - Criando DTOs para entrada de dados na API
+Criação de DTOs para entradas de restaurantes e id de cozinha.  
+Alteração no controller de restaurante para utilização do DTO de entrada de dados.
