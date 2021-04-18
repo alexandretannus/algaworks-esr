@@ -655,3 +655,6 @@ Utilização do ModelMapper no assembler e disassembler de restaurantes.
 
 ### Aula 11.16 - Customizando o mapeamento de propriedades com ModelMapper
 Customização da propriedade taxaFrete na representação através de mapeamento na classe de configuração do ModelMapper.
+
+### Aula 11.17 -  Mapeando para uma instância destino (e não um tipo) com ModelMapper
+Criação do método *copyToDomainObject* na classe RestauranteInputDisassembler para cópia de propriedades (necessário na atualização)
