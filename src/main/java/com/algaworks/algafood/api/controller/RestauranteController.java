@@ -4,12 +4,12 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import com.algaworks.algafood.api.assembler.RestauranteInputDisassembler;
 import com.algaworks.algafood.api.assembler.RestauranteModelAssembler;
 import com.algaworks.algafood.api.model.RestauranteModel;
 import com.algaworks.algafood.api.model.inputs.RestauranteInput;
 import com.algaworks.algafood.domain.exception.CozinhaNaoEncontradaException;
 import com.algaworks.algafood.domain.exception.NegocioException;
-import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
 import com.algaworks.algafood.domain.service.CadastroRestauranteService;
@@ -39,6 +39,9 @@ public class RestauranteController {
     @Autowired
     private RestauranteModelAssembler restauranteModelAssembler;
 
+    @Autowired
+    private RestauranteInputDisassembler restauranteInputDisassembler;
+
     @GetMapping
     public List<RestauranteModel> listar() {
         List<Restaurante> restaurantes = restauranteRepository.findAll();
@@ -59,7 +62,7 @@ public class RestauranteController {
     @ResponseStatus(HttpStatus.CREATED)
     public RestauranteModel adicionar(@RequestBody @Valid RestauranteInput restauranteInput) {
         try {
-            Restaurante restaurante = toDomainObject(restauranteInput);  
+            Restaurante restaurante = restauranteInputDisassembler.toDomainObject(restauranteInput);  
             Restaurante restauranteSalvo = service.salvar(restaurante);          
             return restauranteModelAssembler.toModel(restauranteSalvo);
         } catch (CozinhaNaoEncontradaException e) {
@@ -71,7 +74,7 @@ public class RestauranteController {
     @ResponseStatus(HttpStatus.OK)
     public RestauranteModel atualizar(@PathVariable Long restauranteId, @RequestBody @Valid RestauranteInput restauranteInput) {
 
-        Restaurante restaurante = toDomainObject(restauranteInput);
+        Restaurante restaurante = restauranteInputDisassembler.toDomainObject(restauranteInput);
         Restaurante restauranteAtual = service.buscarOuFalhar(restauranteId);
 
         BeanUtils.copyProperties(restaurante, restauranteAtual, "id", "formasPagamento", "endereco", "dataCadastro",
@@ -86,17 +89,4 @@ public class RestauranteController {
 
     }
 
-    private Restaurante toDomainObject(RestauranteInput restauranteInput) { 
-        Restaurante restaurante = new Restaurante();
-
-        restaurante.setNome(restauranteInput.getNome());
-        restaurante.setTaxaFrete(restauranteInput.getTaxaFrete());
-
-        Cozinha cozinha = new Cozinha();
-        cozinha.setId(restauranteInput.getCozinha().getId());
-
-        restaurante.setCozinha(cozinha);
-
-        return restaurante;
-    }
 }

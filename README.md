@@ -643,3 +643,7 @@ Alteração no controller de restaurante para utilização do DTO de entrada de 
 
 ### Aula 11.12 - Refatorando e criando um assembler de DTO
 Exclusão do mixin de restaurante.  
+
+### Aula 11.13 - Desafio: Refatorando e criando um disassembler do DTO
+Criação da classe RestauranteInputDisassembler e transferência do método *toDomainObject* para esta classe.  
+Refatoração do controller de restaurante.
