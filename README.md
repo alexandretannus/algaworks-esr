@@ -670,3 +670,7 @@ Criação de DTOs, assemblers e disassemblers para cidade, estado e cozinha
 ### Aula 12.4. Implementando os endpoints de ativação e inativação de restaurantes
 Criação do atributo *ativo* no banco de dados e no modelo.  
 Implementação dos endpoints de ativação (*put /restaurantes/{id}/ativo*) e inativação (*delete /restaurantes/{id}/ativo*) de restaurantes
+
+### Aula 12.6 - Adicionando endereço no modelo da representação do recurso de restaurante
+Criação do modelo de representação de endereço (EnderecoModel).  
+Configuração customizada para apresentação apenas do nome do estado no endereço. 
