@@ -674,3 +674,7 @@ Implementação dos endpoints de ativação (*put /restaurantes/{id}/ativo*) e i
 ### Aula 12.6 - Adicionando endereço no modelo da representação do recurso de restaurante
 Criação do modelo de representação de endereço (EnderecoModel).  
 Configuração customizada para apresentação apenas do nome do estado no endereço. 
+
+### Aula 12.7 - Refatorando serviço de cadastro de restaurante para incluir endereço
+Criação do modelo de representação de entrada de endereço (EnderecoInput).  
+Refatoração para fazer endereço ser atributo obrigatório na adição e atualização de restaurantes.
