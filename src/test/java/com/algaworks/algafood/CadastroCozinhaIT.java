@@ -9,13 +9,14 @@ import com.algaworks.algafood.domain.exception.EntidadeEmUsoException;
 import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.service.CadastroCozinhaService;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class CadastroCozinhaIT {
 
@@ -36,43 +37,59 @@ public class CadastroCozinhaIT {
         assertThat(cozinha.getId()).isNotNull();
     }
 
-    @Test(expected = ConstraintViolationException.class)
+    @Test
     public void deveFalhar_QuandoCadastrarCozinhaComNomeEmBranco(){        
         //cenário
         Cozinha cozinha = new Cozinha();
         cozinha.setNome("  ");
 
-        //ação
-        cozinha = cadastroCozinha.salvar(cozinha);
+        verificarConstraintViolationException(cozinha);
+
     }
     
-    @Test(expected = ConstraintViolationException.class)
+    @Test
     public void deveFalhar_QuandoCadastrarCozinhaComNomeNulo(){        
         //cenário
         Cozinha cozinha = new Cozinha();
         cozinha.setNome(null);
 
-        //ação
-        cozinha = cadastroCozinha.salvar(cozinha);
+        verificarConstraintViolationException(cozinha);
     }
         
-    @Test(expected = ConstraintViolationException.class)
+    @Test
     public void deveFalhar_QuandoCadastrarCozinhaComNomeVazio(){        
         //cenário
         Cozinha cozinha = new Cozinha();
         cozinha.setNome("");
 
-        //ação
-        cozinha = cadastroCozinha.salvar(cozinha);
+        verificarConstraintViolationException(cozinha);
     }
 
-    @Test(expected = EntidadeEmUsoException.class)
+    @Test
     public void deveFalhar_QuandoExcluirCozinhaEmUso(){
-        cadastroCozinha.remover(2L);
+        var erroEsperado = Assertions.assertThrows(EntidadeEmUsoException.class, () -> {
+            cadastroCozinha.remover(2L);
+        });
+        
+        assertThat(erroEsperado).isNotNull();
     }
     
-    @Test(expected = CozinhaNaoEncontradaException.class)
-    public void deveFalhar_QuandoExcluirCozinhaInexistente(){
-        cadastroCozinha.remover(40L);
+    @Test
+    public void deveFalhar_QuandoExcluirCozinhaInexistente(){        
+        var erroEsperado = Assertions.assertThrows(CozinhaNaoEncontradaException.class, () -> {            
+            cadastroCozinha.remover(40L); 
+        });
+        
+        assertThat(erroEsperado).isNotNull();
+    }
+
+    private void verificarConstraintViolationException(Cozinha cozinha) {
+        ConstraintViolationException erroEsperado = Assertions.assertThrows(
+            ConstraintViolationException.class,
+            () -> {
+                cadastroCozinha.salvar(cozinha);
+            });
+
+        assertThat(erroEsperado).isNotNull();
     }
 }
