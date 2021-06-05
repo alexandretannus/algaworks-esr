@@ -1,6 +1,7 @@
 package com.algaworks.algafood;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import javax.validation.ConstraintViolationException;
 
@@ -63,6 +64,17 @@ public class CadastroCozinhaIT {
         cozinha.setNome("");
 
         verificarConstraintViolationException(cozinha);
+    }
+
+    @Test
+    public void deveExcluirCozinhaComSucesso() {
+        cadastroCozinha.remover(5L);
+
+        var erroEsperado = Assertions.assertThrows(CozinhaNaoEncontradaException.class, () -> {            
+            cadastroCozinha.buscarOuFalhar(5L); 
+        });
+        
+        assertThat(erroEsperado).isNotNull();
     }
 
     @Test
