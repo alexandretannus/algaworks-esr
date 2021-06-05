@@ -29,6 +29,7 @@ INSERT INTO cozinha (id, nome) VALUES (1, 'Tailandesa');
 INSERT INTO cozinha (id, nome) VALUES (2, 'Indiana');
 INSERT INTO cozinha (id, nome) VALUES (3, 'Argentina');
 INSERT INTO cozinha (id, nome) VALUES (4, 'Brasileira');
+INSERT INTO cozinha (id, nome) VALUES (5, 'Italiana');
 
 INSERT INTO estado (id, nome) VALUES (1, 'Minas Gerais');
 INSERT INTO estado (id, nome) VALUES (2, 'São Paulo');

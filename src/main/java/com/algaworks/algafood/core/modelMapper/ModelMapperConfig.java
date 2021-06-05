@@ -1,8 +1,5 @@
 package com.algaworks.algafood.core.modelmapper;
 
-import com.algaworks.algafood.api.model.RestauranteModel;
-import com.algaworks.algafood.domain.model.Restaurante;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,9 +11,9 @@ public class ModelMapperConfig {
     public ModelMapper modelMapper() {
         var modelMap = new ModelMapper();
 
-        modelMap.createTypeMap(Restaurante.class, RestauranteModel.class)
+        /* modelMap.createTypeMap(Restaurante.class, RestauranteModel.class)
             .addMapping(Restaurante::getTaxaFrete, RestauranteModel::setPrecoFrete);
-
+         */
         return modelMap;
     }
 }
