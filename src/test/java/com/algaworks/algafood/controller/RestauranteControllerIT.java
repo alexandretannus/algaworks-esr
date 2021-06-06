@@ -1,4 +1,4 @@
-package com.algaworks.algafood;
+package com.algaworks.algafood.controller;
 
 
 import static io.restassured.RestAssured.given;

@@ -1,4 +1,4 @@
-package com.algaworks.algafood;
+package com.algaworks.algafood.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
