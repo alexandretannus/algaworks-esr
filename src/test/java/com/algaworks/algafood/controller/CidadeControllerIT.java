@@ -6,10 +6,17 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 
+import java.math.BigDecimal;
+
 import com.algaworks.algafood.domain.model.Cidade;
+import com.algaworks.algafood.domain.model.Cozinha;
+import com.algaworks.algafood.domain.model.Endereco;
 import com.algaworks.algafood.domain.model.Estado;
+import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.CidadeRepository;
+import com.algaworks.algafood.domain.repository.CozinhaRepository;
 import com.algaworks.algafood.domain.repository.EstadoRepository;
+import com.algaworks.algafood.domain.repository.RestauranteRepository;
 import com.algaworks.algafood.util.DatabaseCleaner;
 import com.algaworks.algafood.util.ResourceUtil;
 
@@ -47,6 +54,12 @@ public class CidadeControllerIT {
 
     @Autowired
     private EstadoRepository estadoRepository;
+
+    @Autowired
+    private CozinhaRepository cozinhaRepository;
+
+    @Autowired
+    private RestauranteRepository restauranteRepository;
     
     @BeforeEach
     public void setup() {
@@ -173,12 +186,34 @@ public class CidadeControllerIT {
     @Test
     public void deveRetornarStatus204_QuandoExcluirCidade() {
         given()
-            .pathParam("cidadeId", 2L)
+            .pathParam("cidadeId", 1L)
             .contentType(ContentType.JSON)
         .when()
             .delete("{cidadeId}")
         .then()
             .statusCode(HttpStatus.NO_CONTENT.value());
+    }
+    
+    @Test
+    public void deveRetornarStatus404_QuandoExcluirCidadeInexistente() {
+        given()
+            .pathParam("cidadeId", 20L)
+            .contentType(ContentType.JSON)
+        .when()
+            .delete("{cidadeId}")
+        .then()
+            .statusCode(HttpStatus.NOT_FOUND.value());
+    }
+
+    @Test
+    public void deveRetornarStatus409_QuandoExcluirCidadeEmUso() {
+        given()
+            .pathParam("cidadeId", 2L)
+            .contentType(ContentType.JSON)
+        .when()
+            .delete("{cidadeId}")
+        .then()
+            .statusCode(HttpStatus.CONFLICT.value());
     }
 
     private void prepararDados() {
@@ -199,6 +234,21 @@ public class CidadeControllerIT {
         anapolis.setEstado(goias);
         anapolis.setNome("Anápolis");
         cidadeRepository.save(anapolis);
+
+        Cozinha brasileira = new Cozinha();
+        brasileira.setNome("Brasileira");
+        cozinhaRepository.save(brasileira);
+
+        Endereco endereco = new Endereco();
+        endereco.setLogradouro("Rua ABC");
+        endereco.setCidade(anapolis);
+
+        Restaurante restaurante = new Restaurante();
+        restaurante.setCozinha(brasileira);
+        restaurante.setNome("Restaurante Brasil");
+        restaurante.setTaxaFrete(BigDecimal.valueOf(5.10));
+        restaurante.setEndereco(endereco);
+        restauranteRepository.save(restaurante);
         
         quantidadeCidadesCadastradas = cidadeRepository.count();
 
