@@ -4,6 +4,9 @@ Repositório com códigos desenvolvidos no curso ESR da Algaworks.
 
 Cada branch representa o código desenvolvido na aula referenciada. Algumas aulas são apenas teóricas, sem desenvolvimento de código.
 
+__JaCoCo Test Coverage__ 
+[![coverage](https://github.com/alexandretannus/algaworks-esr/blob/master/.github/badges/jacoco.svg)](https://github.com/alexandretannus/algaworks-esr/actions/workflows/ci.yml)
+
 ## Módulo 2
 
 ### Aula 2.5 - Criando um projeto Spring Boot com Spring Initializr
@@ -664,6 +667,7 @@ Mensagens de validação sem customização com DTOs. Ajuste do arquivo message.
 
 ### Aula 11.20 - Desafio: usando DTOs como representation model
 Criação de DTOs, assemblers e disassemblers para cidade, estado e cozinha
+
 
 ## Módulo 12
 
