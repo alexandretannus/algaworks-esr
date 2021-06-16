@@ -5,6 +5,8 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.math.BigDecimal;
 
@@ -167,6 +169,42 @@ public class RestauranteControllerIT {
             .put("{restauranteId}")
         .then()
             .statusCode(HttpStatus.BAD_REQUEST.value());
+    }
+
+    // Ativar e inativar restaurante
+
+    @Test
+    public void deveRetornarStatus204EMudarStatus_QuandoAtivarRestaurante() {
+        Long codigo = 1L;
+
+        given()
+            .contentType(ContentType.JSON)
+            .accept(ContentType.JSON)
+            .pathParam("restauranteId", codigo)
+        .when()
+            .put("{restauranteId}/ativo")
+        .then()
+            .statusCode(HttpStatus.NO_CONTENT.value());
+
+        Restaurante restaurante = restauranteRepository.findById(codigo).get();
+        assertTrue(restaurante.getAtivo());
+    }
+
+    @Test
+    public void deveRetornarStatus204EMudarStatus_QuandoInativarRestaurante() {
+        Long codigo = 1L;
+
+        given()
+            .contentType(ContentType.JSON)
+            .accept(ContentType.JSON)
+            .pathParam("restauranteId", codigo)
+        .when()
+            .delete("{restauranteId}/ativo")
+        .then()
+            .statusCode(HttpStatus.NO_CONTENT.value());
+
+        Restaurante restaurante = restauranteRepository.findById(codigo).get();
+        assertFalse(restaurante.getAtivo());
     }
 
     private void prepararDados() {

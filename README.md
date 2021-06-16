@@ -667,3 +667,10 @@ Mensagens de validação sem customização com DTOs. Ajuste do arquivo message.
 
 ### Aula 11.20 - Desafio: usando DTOs como representation model
 Criação de DTOs, assemblers e disassemblers para cidade, estado e cozinha
+
+
+## Módulo 12
+
+### Aula 12.4. Implementando os endpoints de ativação e inativação de restaurantes
+Criação do atributo *ativo* no banco de dados e no modelo.  
+Implementação dos endpoints de ativação (*put /restaurantes/{id}/ativo*) e inativação (*delete /restaurantes/{id}/ativo*) de restaurantes
