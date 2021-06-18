@@ -8,6 +8,7 @@ import com.algaworks.algafood.api.assembler.RestauranteInputDisassembler;
 import com.algaworks.algafood.api.assembler.RestauranteModelAssembler;
 import com.algaworks.algafood.api.model.RestauranteModel;
 import com.algaworks.algafood.api.model.inputs.RestauranteInput;
+import com.algaworks.algafood.domain.exception.CidadeNaoEncontradaException;
 import com.algaworks.algafood.domain.exception.CozinhaNaoEncontradaException;
 import com.algaworks.algafood.domain.exception.NegocioException;
 import com.algaworks.algafood.domain.model.Restaurante;
@@ -74,20 +75,22 @@ public class RestauranteController {
     @ResponseStatus(HttpStatus.OK)
     public RestauranteModel atualizar(@PathVariable Long restauranteId, @RequestBody @Valid RestauranteInput restauranteInput) {
 
-        //Restaurante restaurante = restauranteInputDisassembler.toDomainObject(restauranteInput);
         Restaurante restauranteAtual = service.buscarOuFalhar(restauranteId);
 
         restauranteInputDisassembler.copyToDomainObject(restauranteInput, restauranteAtual);
 
-        //BeanUtils.copyProperties(restaurante, restauranteAtual, "id", "formasPagamento", "endereco", "dataCadastro", "produtos");
-
         try {
             Restaurante restauranteSalvo = service.salvar(restauranteAtual);
             return restauranteModelAssembler.toModel(restauranteSalvo);
-        } catch (CozinhaNaoEncontradaException e) {
+        } catch (CozinhaNaoEncontradaException | CidadeNaoEncontradaException e) {
             throw new NegocioException(e.getMessage());
         }
+    }
 
+    @PutMapping("/{restauranteId}/ativo")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void ativar(@PathVariable Long restauranteId) {
+        service.ativar(restauranteId);
     }
 
     @PutMapping("/{restauranteId}/ativo")
