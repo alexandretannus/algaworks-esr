@@ -13,7 +13,7 @@ public class ModelMapperConfig {
     @Bean
     public ModelMapper modelMapper() {
         var modelMap = new ModelMapper();
-
+      
         modelMap.createTypeMap(Endereco.class, EnderecoModel.class)
                     .<String>addMapping(
                         src -> src.getCidade().getEstado().getNome(), 

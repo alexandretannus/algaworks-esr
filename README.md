@@ -4,6 +4,9 @@ Repositório com códigos desenvolvidos no curso ESR da Algaworks.
 
 Cada branch representa o código desenvolvido na aula referenciada. Algumas aulas são apenas teóricas, sem desenvolvimento de código.
 
+__JaCoCo Test Coverage__ 
+[![coverage](https://github.com/alexandretannus/algaworks-esr/blob/master/.github/badges/jacoco.svg)](https://github.com/alexandretannus/algaworks-esr/actions/workflows/ci.yml)
+
 ## Módulo 2
 
 ### Aula 2.5 - Criando um projeto Spring Boot com Spring Initializr
@@ -678,3 +681,4 @@ Configuração customizada para apresentação apenas do nome do estado no ender
 ### Aula 12.7 - Refatorando serviço de cadastro de restaurante para incluir endereço
 Criação do modelo de representação de entrada de endereço (EnderecoInput).  
 Refatoração para fazer endereço ser atributo obrigatório na adição e atualização de restaurantes.
+

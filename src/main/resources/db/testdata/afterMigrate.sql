@@ -29,10 +29,12 @@ INSERT INTO cozinha (id, nome) VALUES (1, 'Tailandesa');
 INSERT INTO cozinha (id, nome) VALUES (2, 'Indiana');
 INSERT INTO cozinha (id, nome) VALUES (3, 'Argentina');
 INSERT INTO cozinha (id, nome) VALUES (4, 'Brasileira');
+INSERT INTO cozinha (id, nome) VALUES (5, 'Italiana');
 
 INSERT INTO estado (id, nome) VALUES (1, 'Minas Gerais');
 INSERT INTO estado (id, nome) VALUES (2, 'São Paulo');
 INSERT INTO estado (id, nome) VALUES (3, 'Ceará');
+INSERT INTO estado (id, nome) VALUES (4, 'Goiás');
 
 INSERT INTO cidade (id, nome, estado_id) VALUES (1, 'Uberlândia', 1);
 INSERT INTO cidade (id, nome, estado_id) VALUES (2, 'Belo Horizonte', 1);
