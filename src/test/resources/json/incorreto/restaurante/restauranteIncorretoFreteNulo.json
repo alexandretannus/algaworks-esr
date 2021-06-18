@@ -1,8 +1,8 @@
 {
     "nome": "Asian Food 3",
-    "taxaFrete": 2,
+    "taxaFrete": null, 
     "cozinha": {
-        "id": 100
+        "id": 1
     },
     "endereco": {
       "cep": "38400-999",

@@ -3,96 +3,77 @@ package com.algaworks.algafood.controller;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.math.BigDecimal;
-
-import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.model.Restaurante;
-import com.algaworks.algafood.domain.repository.CozinhaRepository;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
-import com.algaworks.algafood.util.DatabaseCleaner;
 import com.algaworks.algafood.util.ResourceUtil;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.context.TestPropertySource;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource("/application-test.properties")
-public class RestauranteControllerIT {   
+public class RestauranteControllerIT extends AbstractTestController {   
+    
+    private static final String FRETE_OBRIGATORIO = "Taxa de frete do restaurante é obrigatório";
+    private static final String FRETE_NAO_NEGATIVO = "Taxa de frete do restaurante deve ser um valor maior ou igual a zero";
+    private static final String ENDERECO_OBRIGATORIO = "Endereço é obrigatório";
 
     private long quantidadeRestaurantesCadastrados;
-    private String jsonCorretoRestaurante;
-    private String jsonCorretoRestauranteUpdate;
+    private Long codigoRestauranteExistente = 1L;
+    private Long codigoRestauranteInexistente = 100L;
+    
     private String jsonIncorretoRestauranteCozinhaInexistente;
+    private String jsonIncorretoRestauranteDadoTipoInvalido;
+    private String jsonIncorretoRestauranteFreteNegativo;
+    private String jsonIncorretoRestauranteFreteNulo;
+    private String jsonIncorretoRestauranteSemEndereco;
 
-    @LocalServerPort
-    private int port;
-
-    @Autowired
-    private DatabaseCleaner cleaner;
 
     @Autowired
     private RestauranteRepository restauranteRepository;
 
-    @Autowired
-    private CozinhaRepository cozinhaRepository;
-
     @BeforeEach
     public void setup() {
-        RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 
-        RestAssured.port = port;
-        RestAssured.basePath = "/restaurantes";
+        RestAssured.basePath = "/restaurantes";        
 
-        cleaner.clearTables();
         prepararDados();
+        quantidadeRestaurantesCadastrados = restauranteRepository.count();
 
-        jsonCorretoRestaurante = ResourceUtil
+        super.param = "{restauranteId}";
+        super.pathParam = "restauranteId";
+        super.userMessage = RESTAURANTE_INEXISTENTE_MESSAGE;
+
+        super.jsonCorretoCadastro = ResourceUtil
             .getContentFromResource("/json/correto/restaurante/restaurante.json");
 
-        jsonCorretoRestauranteUpdate = ResourceUtil
-                .getContentFromResource("/json/correto/restaurante/restauranteUpdate.json");
-
-        jsonIncorretoRestauranteCozinhaInexistente = ResourceUtil
-            .getContentFromResource("/json/incorreto/restaurante/restauranteIncorretoCozinhaInexistente.json");
-                
+        jsonIncorretoRestauranteCozinhaInexistente = carregarJsonIncorreto("CozinhaInexistente");        
+        jsonIncorretoRestauranteDadoTipoInvalido = carregarJsonIncorreto("DadoTipoInvalido");
+        jsonIncorretoRestauranteFreteNegativo = carregarJsonIncorreto("FreteNegativo");        
+        jsonIncorretoRestauranteFreteNulo = carregarJsonIncorreto("FreteNulo");
+        jsonIncorretoRestauranteSemEndereco = carregarJsonIncorreto("SemEndereco");
     }
 
-    @Test
-    public void deveRetornarStatus200_QuandoConsultarRestaurantes() {
-        given()
-            .accept(ContentType.JSON)
-        .when()
-            .get()
-        .then()
-            .statusCode(HttpStatus.OK.value());
-    }
-
+    // Consultas
     @Test
     public void deveRetornarRespostaEStatusCorretos_QuandoConsultarRestauranteExistente() {
         given()
-            .pathParam("restauranteId", 2L)
+            .pathParam("restauranteId", codigoRestauranteExistente)
             .accept(ContentType.JSON)
         .when()
             .get("{restauranteId}")
         .then()
             .statusCode(HttpStatus.OK.value())
-            .body("nome", equalTo("China Box"));       
+            .body("nome", equalTo("Feijoada"));       
     }
 
     @Test
@@ -103,32 +84,10 @@ public class RestauranteControllerIT {
             .get()
         .then()
             .body("", hasSize((int)quantidadeRestaurantesCadastrados))
-            .body("nome", hasItems("Feijoada - Frete Grátis", "China Box"));
+            .body("nome", hasItems("Feijoada", "China Box"));
     }
 
-    @Test 
-    public void deveRetornarStatus404_QuandoConsultarRestauranteInxistente() {
-        given()
-            .pathParam("restauranteId", 20L)
-            .accept(ContentType.JSON)
-        .when()
-            .get("{restauranteId}")
-        .then()
-            .statusCode(HttpStatus.NOT_FOUND.value());
-    }
-
-    @Test
-    public void deveRetornarStatus201_QuandoCadastrarRestaurante() {
-        given()
-            .contentType(ContentType.JSON)
-            .accept(ContentType.JSON)
-            .body(jsonCorretoRestaurante)
-        .when()
-            .post()
-        .then()
-            .statusCode(HttpStatus.CREATED.value());
-    }
-
+    // Cadastros
     @Test
     public void deveRetornarStatus400_QuandoCadastrarRestauranteComCozinhaInexistente() {
     given()
@@ -139,97 +98,141 @@ public class RestauranteControllerIT {
         .post()
     .then()
         .statusCode(HttpStatus.BAD_REQUEST.value())
-        .body("detail", containsString("Não existe cozinha cadastrada com o código"))
-        .body("title", equalTo("Violação de regra de negócio"))
-        .body("userMessage", containsString("Não existe cozinha cadastrada com o código"));;
+        .body("detail", containsString(COZINHA_INEXISTENTE_MESSAGE))
+        .body("title", equalTo(VIOLACAO_REGRA_NEGOCIO))
+        .body("userMessage", containsString(COZINHA_INEXISTENTE_MESSAGE));;
     }
 
     @Test
-    public void deveRetornarStatus200_QuandoAtualizarRestaurante() {
-        given()
-            .contentType(ContentType.JSON)
-            .accept(ContentType.JSON)
-            .pathParam("restauranteId", 1L)
-            .body(jsonCorretoRestauranteUpdate)
-        .when()
-            .put("{restauranteId}")
-        .then()
-            .statusCode(HttpStatus.OK.value());
+    public void deveRetornarStatus400_QuandoTentarCadastrarRestauranteComFreteNegativo() {
+    given()
+        .contentType(ContentType.JSON)
+        .accept(ContentType.JSON)
+        .body(jsonIncorretoRestauranteFreteNegativo)
+    .when()
+        .post()
+    .then()
+        .statusCode(HttpStatus.BAD_REQUEST.value())
+        .body("detail", containsString(CAMPOS_INVALIDOS))
+        .body("title", equalTo(DADOS_INVALIDOS))
+        .body("objects.userMessage", hasItem(containsString(FRETE_NAO_NEGATIVO)));
     }
 
+    @Test
+    public void deveRetornarStatus400_QuandoTentarCadastrarRestauranteComFreteNulo() {
+    given()
+        .contentType(ContentType.JSON)
+        .accept(ContentType.JSON)
+        .body(jsonIncorretoRestauranteFreteNulo)
+    .when()
+        .post()
+    .then()
+        .statusCode(HttpStatus.BAD_REQUEST.value())
+        .body("detail", containsString(CAMPOS_INVALIDOS))
+        .body("title", equalTo(DADOS_INVALIDOS))
+        .body("objects.userMessage", hasItem(containsString(FRETE_OBRIGATORIO)));
+    }
+
+
+    @Test
+    public void deveRetornarStatus400_QuandoTentarCadastrarRestauranteSemEndereco() {
+    given()
+        .contentType(ContentType.JSON)
+        .accept(ContentType.JSON)
+        .body(jsonIncorretoRestauranteSemEndereco)
+    .when()
+        .post()
+    .then()
+        .statusCode(HttpStatus.BAD_REQUEST.value())
+        .body("detail", containsString(CAMPOS_INVALIDOS))
+        .body("title", equalTo(DADOS_INVALIDOS))
+        .body("objects.userMessage", hasItem(containsString(ENDERECO_OBRIGATORIO)));
+    }
     
+    //Atualizações
     @Test
-    public void deveRetornarStatus400_QuandoAtualizarRestauranteComDadosIncorretos() {
+    public void deveRetornarStatus404_QuandoTentarAtualizarRestauranteInexistente() {
+
         given()
             .contentType(ContentType.JSON)
             .accept(ContentType.JSON)
-            .pathParam("restauranteId", 1L)
+            .pathParam(pathParam, codigoRestauranteInexistente)
+            .body(jsonCorretoCadastro)
+        .when()
+            .put(param)
+        .then()
+            .statusCode(HttpStatus.NOT_FOUND.value());
+    }
+
+    @Test
+    public void deveRetornarStatus400_QuandoTentarAtualizarRestauranteComCozinhaInexistente() {
+
+        given()
+            .contentType(ContentType.JSON)
+            .accept(ContentType.JSON)
+            .pathParam(pathParam, codigoRestauranteExistente)
             .body(jsonIncorretoRestauranteCozinhaInexistente)
         .when()
-            .put("{restauranteId}")
+            .put(param)
         .then()
             .statusCode(HttpStatus.BAD_REQUEST.value());
+    }
+    
+    @Test
+    public void deveRetornarStatus400_QuandoTentarAtualizarRestauranteComDadosDeTipoInvalido() {        
+        given()
+            .contentType(ContentType.JSON)
+            .accept(ContentType.JSON)
+            .pathParam(pathParam, codigoRestauranteExistente)
+            .body(jsonIncorretoRestauranteDadoTipoInvalido)
+        .when()
+            .put(param)
+        .then()
+            .statusCode(HttpStatus.BAD_REQUEST.value())
+            .body("title", containsString(MENSAGEM_INCOMPREENSIVEL))
+            .body("detail", containsString(TIPO_INVALIDO_DETAIL));
+
     }
 
     // Ativar e inativar restaurante
 
     @Test
     public void deveRetornarStatus204EMudarStatus_QuandoAtivarRestaurante() {
-        Long codigo = 1L;
-
         given()
             .contentType(ContentType.JSON)
             .accept(ContentType.JSON)
-            .pathParam("restauranteId", codigo)
+            .pathParam(pathParam, codigoRestauranteExistente)
         .when()
-            .put("{restauranteId}/ativo")
+            .put(param + "/ativo")
         .then()
             .statusCode(HttpStatus.NO_CONTENT.value());
 
-        Restaurante restaurante = restauranteRepository.findById(codigo).get();
+        Restaurante restaurante = restauranteRepository.findById(codigoRestauranteExistente).get();
         assertTrue(restaurante.getAtivo());
     }
 
     @Test
     public void deveRetornarStatus204EMudarStatus_QuandoInativarRestaurante() {
-        Long codigo = 1L;
 
         given()
             .contentType(ContentType.JSON)
             .accept(ContentType.JSON)
-            .pathParam("restauranteId", codigo)
+            .pathParam(pathParam, codigoRestauranteExistente)
         .when()
-            .delete("{restauranteId}/ativo")
+            .delete(param + "/ativo")
         .then()
             .statusCode(HttpStatus.NO_CONTENT.value());
 
-        Restaurante restaurante = restauranteRepository.findById(codigo).get();
+        Restaurante restaurante = restauranteRepository.findById(codigoRestauranteExistente).get();
         assertFalse(restaurante.getAtivo());
     }
 
-    private void prepararDados() {
-        Cozinha chinesa = new Cozinha();
-        chinesa.setNome("Chinesa");
-        cozinhaRepository.save(chinesa);
+    private String carregarJsonIncorreto(String nomeErro) {
+        String baseString = "/json/incorreto/restaurante/restauranteIncorreto";
+        String resourceName = baseString + nomeErro + ".json";
 
-        Cozinha brasileira = new Cozinha();
-        brasileira.setNome("Brasileira");
-        cozinhaRepository.save(brasileira);
-
-        Restaurante restauranteBrasil = new Restaurante();
-        restauranteBrasil.setCozinha(brasileira);
-        restauranteBrasil.setNome("Feijoada - Frete Grátis");
-        restauranteBrasil.setTaxaFrete(BigDecimal.ZERO);
-        
-        Restaurante restauranteChines = new Restaurante();
-        restauranteChines.setCozinha(chinesa);
-        restauranteChines.setNome("China Box");
-        restauranteChines.setTaxaFrete(BigDecimal.ONE);
-
-        restauranteRepository.save(restauranteBrasil);
-        restauranteRepository.save(restauranteChines);
-
-        quantidadeRestaurantesCadastrados = restauranteRepository.count();
+        return ResourceUtil.getContentFromResource(resourceName);
     }
+
 }
 

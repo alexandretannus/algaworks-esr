@@ -1,0 +1,7 @@
+{
+    "nome": "Asian Food 3",
+    "taxaFrete": 5.2, 
+    "cozinha": {
+        "id": 1
+    }
+}

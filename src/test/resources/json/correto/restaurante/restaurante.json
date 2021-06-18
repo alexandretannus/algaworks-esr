@@ -3,5 +3,14 @@
     "taxaFrete": 3,
     "cozinha": {
         "id": 2
-    }
+    },
+        "endereco": {
+        "cep": "38400-999",
+        "logradouro": "Rua João Pinheiro",
+        "numero": "1357",
+        "bairro": "Centro",
+        "cidade": {
+            "id": 2
+        }
+	}
 }

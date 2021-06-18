@@ -1,6 +1,6 @@
 {
     "nome": "Asian Food 3",
-    "taxaFrete": 2,
+    "taxaFrete": "ab", 
     "cozinha": {
         "id": 100
     },

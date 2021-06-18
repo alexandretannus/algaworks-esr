@@ -14,12 +14,18 @@ import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "cozinha")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Cozinha {
 
@@ -34,6 +40,7 @@ public class Cozinha {
 
     @JsonIgnore
     @OneToMany(mappedBy = "cozinha")
+    @Builder.Default
     private List<Restaurante> restaurantes = new ArrayList<>();
 
 }

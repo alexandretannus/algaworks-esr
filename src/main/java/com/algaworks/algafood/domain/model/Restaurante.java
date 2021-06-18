@@ -17,19 +17,21 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-import com.algaworks.algafood.core.validation.ValorZeroIncluiDescricao;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@ValorZeroIncluiDescricao(valorField = "taxaFrete", 
-    descricaoField = "nome", descricaoObrigatoria = "Frete Grátis")
 public class Restaurante {
 
     @Id
@@ -43,6 +45,7 @@ public class Restaurante {
     @Column(name = "taxa_frete", nullable = false)
     private BigDecimal taxaFrete;
 
+    @Builder.Default
     private Boolean ativo = Boolean.TRUE;
 
     @CreationTimestamp
@@ -64,6 +67,7 @@ public class Restaurante {
     @JoinTable(name = "restaurante_forma_pagamento", joinColumns = @JoinColumn(name = "restaurante_id"), inverseJoinColumns = @JoinColumn(name = "forma_pagamento_id"))
     private List<FormaPagamento> formasPagamento;
 
+    @Builder.Default
     @OneToMany(mappedBy = "restaurante")
     private List<Produto> produtos = new ArrayList<>();
     
@@ -75,11 +79,4 @@ public class Restaurante {
         setAtivo(false);
     }
 
-    public void ativar() {
-        setAtivo(true);
-    }
-    
-    public void inativar() {
-        setAtivo(false);
-    }
 }
