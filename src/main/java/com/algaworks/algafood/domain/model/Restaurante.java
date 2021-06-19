@@ -25,6 +25,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.Singular;
 
 @Entity
 @Data
@@ -65,6 +66,7 @@ public class Restaurante {
 
     @ManyToMany
     @JoinTable(name = "restaurante_forma_pagamento", joinColumns = @JoinColumn(name = "restaurante_id"), inverseJoinColumns = @JoinColumn(name = "forma_pagamento_id"))
+    @Singular("formaPagamento")
     private List<FormaPagamento> formasPagamento;
 
     @Builder.Default

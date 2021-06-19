@@ -6,10 +6,12 @@ import com.algaworks.algafood.domain.model.Cidade;
 import com.algaworks.algafood.domain.model.Cozinha;
 import com.algaworks.algafood.domain.model.Endereco;
 import com.algaworks.algafood.domain.model.Estado;
+import com.algaworks.algafood.domain.model.FormaPagamento;
 import com.algaworks.algafood.domain.model.Restaurante;
 import com.algaworks.algafood.domain.repository.CidadeRepository;
 import com.algaworks.algafood.domain.repository.CozinhaRepository;
 import com.algaworks.algafood.domain.repository.EstadoRepository;
+import com.algaworks.algafood.domain.repository.FormaPagamentoRepository;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +33,10 @@ public class CadastroDados {
     private static Restaurante restauranteBrasil;
     private static Restaurante restauranteBrasil2;
 
+    private static FormaPagamento dinheiro;
+    private static FormaPagamento debito;
+    private static FormaPagamento pix;
+
     @Autowired
     private EstadoRepository estadoRepository;
 
@@ -42,6 +48,9 @@ public class CadastroDados {
 
     @Autowired
     private RestauranteRepository restauranteRepository;
+
+    @Autowired
+    private FormaPagamentoRepository formaPagamentoRepository;
     
     public void cadastrarEstados() {
 
@@ -82,6 +91,7 @@ public class CadastroDados {
                                 .taxaFrete(BigDecimal.ZERO)
                                 .cozinha(cozinhaBrasileira)
                                 .endereco(endereco1)
+                                .formaPagamento(dinheiro)
                                 .build();
 
         restauranteChines = Restaurante.builder()
@@ -89,6 +99,8 @@ public class CadastroDados {
                                 .taxaFrete(BigDecimal.ONE)
                                 .cozinha(cozinhaChinesa)
                                 .endereco(endereco2)
+                                .formaPagamento(dinheiro)
+                                .formaPagamento(debito)
                                 .build();
 
         restauranteBrasil2 = Restaurante.builder()
@@ -111,10 +123,16 @@ public class CadastroDados {
                     .cep(cep)
                     .numero(numero)
                     .build();
-
-
     }
 
-
+    public void cadastrarFormasPagamento() {
+        dinheiro = FormaPagamento.builder().descricao("Dinheiro").build();
+        pix = FormaPagamento.builder().descricao("Pix").build();
+        debito = FormaPagamento.builder().descricao("Débito").build();
+        
+        formaPagamentoRepository.save(dinheiro);
+        formaPagamentoRepository.save(pix);
+        formaPagamentoRepository.save(debito);
+    }
 
 }

@@ -2,6 +2,8 @@ package com.algaworks.algafood.api.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import com.algaworks.algafood.api.assembler.FormaPagamentoAssembler;
 import com.algaworks.algafood.api.assembler.FormaPagamentoInputDisassembler;
 import com.algaworks.algafood.api.model.FormaPagamentoModel;
@@ -51,13 +53,14 @@ public class FormaPagamentoController {
     }
 
     @PostMapping
-    public FormaPagamentoModel adicionar(@RequestBody FormaPagamentoInput formaPagamentoInput) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public FormaPagamentoModel adicionar(@Valid @RequestBody FormaPagamentoInput formaPagamentoInput) {
         FormaPagamento formaPagamento = disassembler.toDomainObject(formaPagamentoInput);
         return assembler.toModel(service.salvar(formaPagamento));
     }
 
     @PutMapping("{formaPagamentoId}")
-    public FormaPagamentoModel atualizar(@RequestBody FormaPagamentoInput formaPagamentoInput, @PathVariable Long formaPagamentoId) {
+    public FormaPagamentoModel atualizar(@Valid @RequestBody FormaPagamentoInput formaPagamentoInput, @PathVariable Long formaPagamentoId) {
         FormaPagamento formaPagamentoAtual = service.buscarOuFalhar(formaPagamentoId);
         
         disassembler.copyToDomainObject(formaPagamentoInput, formaPagamentoAtual);

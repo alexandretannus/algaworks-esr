@@ -52,6 +52,7 @@ public class RestauranteControllerIT extends AbstractTestController {
         super.param = "{restauranteId}";
         super.pathParam = "restauranteId";
         super.userMessage = RESTAURANTE_INEXISTENTE_MESSAGE;
+        super.resourcePath = "restaurante";
 
         super.jsonCorretoCadastro = ResourceUtil
             .getContentFromResource("/json/correto/restaurante/restaurante.json");
@@ -227,12 +228,7 @@ public class RestauranteControllerIT extends AbstractTestController {
         assertFalse(restaurante.getAtivo());
     }
 
-    private String carregarJsonIncorreto(String nomeErro) {
-        String baseString = "/json/incorreto/restaurante/restauranteIncorreto";
-        String resourceName = baseString + nomeErro + ".json";
 
-        return ResourceUtil.getContentFromResource(resourceName);
-    }
 
 }
 

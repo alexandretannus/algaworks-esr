@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.containsString;
 
 import com.algaworks.algafood.CadastroDados;
 import com.algaworks.algafood.util.DatabaseCleaner;
+import com.algaworks.algafood.util.ResourceUtil;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,7 @@ public abstract class AbstractTestController {
     protected static final String CIDADE_INEXISTENTE_MESSAGE = "Não existe cidade cadastrada com o código";
     protected static final String COZINHA_INEXISTENTE_MESSAGE = "Não existe cozinha cadastrada com o código";
     protected static final String RESTAURANTE_INEXISTENTE_MESSAGE = "Não existe restaurante cadastrado com o código";
+    protected static final String FORMA_PAGAMENTO_INEXISTENTE = "Não existe forma de pagamento cadastrada com o código";
     
     protected String jsonCorretoCadastro;
 
@@ -42,6 +44,7 @@ public abstract class AbstractTestController {
     protected String param;
 
     protected String userMessage;
+    protected String resourcePath;
 
     @LocalServerPort
     private int port;
@@ -111,6 +114,14 @@ public abstract class AbstractTestController {
         cadastroDados.cadastrarEstados();
         cadastroDados.cadastrarCidades();
         cadastroDados.cadastrarCozinhas();
+        cadastroDados.cadastrarFormasPagamento();
         cadastroDados.cadastrarRestaurantes();
+    }
+
+
+    public String carregarJsonIncorreto(String nomeErro) {
+        String resourceName = String.format("/json/incorreto/%s/%sIncorreto%s.json", resourcePath, resourcePath, nomeErro);
+
+        return ResourceUtil.getContentFromResource(resourceName);
     }
 }
