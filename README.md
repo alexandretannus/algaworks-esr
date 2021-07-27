@@ -682,3 +682,5 @@ Configuração customizada para apresentação apenas do nome do estado no ender
 Criação do modelo de representação de entrada de endereço (EnderecoInput).  
 Refatoração para fazer endereço ser atributo obrigatório na adição e atualização de restaurantes.
 
+### Aula 12.8 - Desafio: implementando os endpoints de grupos
+Implementação dos endpoints de listagem, busca, adição, atualização e exclusão de grupos

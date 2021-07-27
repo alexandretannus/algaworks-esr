@@ -13,6 +13,7 @@ import com.algaworks.algafood.domain.repository.CozinhaRepository;
 import com.algaworks.algafood.domain.repository.EstadoRepository;
 import com.algaworks.algafood.domain.repository.FormaPagamentoRepository;
 import com.algaworks.algafood.domain.repository.RestauranteRepository;
+import com.algaworks.algafood.util.cadastro.CadastroGrupos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -38,6 +39,9 @@ public class CadastroDados {
     private static FormaPagamento pix;
 
     @Autowired
+    private CadastroGrupos cadastroGrupos;
+
+    @Autowired
     private EstadoRepository estadoRepository;
 
     @Autowired
@@ -51,6 +55,10 @@ public class CadastroDados {
 
     @Autowired
     private FormaPagamentoRepository formaPagamentoRepository;
+
+    public void cadastrarGrupos() {
+        cadastroGrupos.cadastrarGrupos();
+    }
     
     public void cadastrarEstados() {
 
@@ -134,5 +142,4 @@ public class CadastroDados {
         formaPagamentoRepository.save(pix);
         formaPagamentoRepository.save(debito);
     }
-
 }

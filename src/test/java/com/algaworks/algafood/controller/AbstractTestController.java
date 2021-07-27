@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.containsString;
 
 import com.algaworks.algafood.CadastroDados;
+import com.algaworks.algafood.domain.exception.interfaces.EntidadeInexistenteMessage;
 import com.algaworks.algafood.util.DatabaseCleaner;
 import com.algaworks.algafood.util.ResourceUtil;
 
@@ -23,7 +24,7 @@ import io.restassured.http.ContentType;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestPropertySource("/application-test.properties")
-public abstract class AbstractTestController {
+public abstract class AbstractTestController implements EntidadeInexistenteMessage {
 
     protected static final String VIOLACAO_REGRA_NEGOCIO = "Violação de regra de negócio";
     protected static final String MENSAGEM_INCOMPREENSIVEL = "Mensagem Incompreensível";
@@ -31,12 +32,6 @@ public abstract class AbstractTestController {
     protected static final String DADOS_INVALIDOS = "Dados inválidos";
 
     protected static final String TIPO_INVALIDO_DETAIL = "Corrija e informe um valor compatível com o tipo";
-
-    protected static final String ESTADO_INEXISTENTE_MESSAGE = "Não existe estado cadastrado com o código";
-    protected static final String CIDADE_INEXISTENTE_MESSAGE = "Não existe cidade cadastrada com o código";
-    protected static final String COZINHA_INEXISTENTE_MESSAGE = "Não existe cozinha cadastrada com o código";
-    protected static final String RESTAURANTE_INEXISTENTE_MESSAGE = "Não existe restaurante cadastrado com o código";
-    protected static final String FORMA_PAGAMENTO_INEXISTENTE = "Não existe forma de pagamento cadastrada com o código";
     
     protected String jsonCorretoCadastro;
 
@@ -54,6 +49,7 @@ public abstract class AbstractTestController {
 
     @Autowired
     private CadastroDados cadastroDados;
+
     
     @BeforeEach
     public void setupEach() {
@@ -116,6 +112,7 @@ public abstract class AbstractTestController {
         cadastroDados.cadastrarCozinhas();
         cadastroDados.cadastrarFormasPagamento();
         cadastroDados.cadastrarRestaurantes();
+        cadastroDados.cadastrarGrupos();
     }
 
 
